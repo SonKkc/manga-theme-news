@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.0/swiper-bundle.css" />
+    <link rel="stylesheet" type="text/css" href="scss/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header id="navbar" class="navbar bg-[#121213]">
+        <div class="my_container flex_between">
+            <div class="navbar_logo">
+                <a class="inline-block py-5" href="/">
+                    <img src="/images/logo.png" title="logo" alt="logo" width="110" height="39">
+                </a>
+            </div>
+
+            <nav class="navbar_menu">
+                <a href="/" title="Home" aria-label="Home" class="navbar_menu_item">
+                    Home
+                </a>
+                <a href="/category.html" title="Ranking" aria-label="Ranking" class="navbar_menu_item">
+                    Category
+                </a>
+                <a href="/manga-list.html" title="Manga List" aria-label="Manga List" class="navbar_menu_item">
+                    Manga List
+                </a>
+                <a href="#" title="Group" aria-label="Group" class="navbar_menu_item">
+                    Group
+                </a>
+                <a href="/" title="Fanpage" aria-label="Fanpage" class="navbar_menu_item">
+                    Fanpage
+                </a>
+            </nav>
+
+            <div class="navbar_right">
+                <button class="modal_toggle py-7 px-2" data-modal="search-modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M17.0392 15.6244C18.2714 14.084 19.0082 12.1301 19.0082 10.0041C19.0082 5.03127 14.9769 1 10.0041 1C5.03127 1 1 5.03127 1 10.0041C1 14.9769 5.03127 19.0082 10.0041 19.0082C12.1301 19.0082 14.084 18.2714 15.6244 17.0392L21.2921 22.707C21.6828 23.0977 22.3163 23.0977 22.707 22.707C23.0977 22.3163 23.0977 21.6828 22.707 21.2921L17.0392 15.6244ZM10.0041 17.0173C6.1308 17.0173 2.99087 13.8774 2.99087 10.0041C2.99087 6.1308 6.1308 2.99087 10.0041 2.99087C13.8774 2.99087 17.0173 6.1308 17.0173 10.0041C17.0173 13.8774 13.8774 17.0173 10.0041 17.0173Z"
+                            fill="currentColor" />
+                    </svg>
+                </button>
+
+                <button class="py-7 px-2 lg:hidden" data-toggle="mobile-menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- END NAVBAR -->
+
+    <!-- BREADCRUM -->
+    <div class="breadcrum">
+        <div class="my_container py-4 gap-4">
+            <a href="/">Home</a>
+            <span> / </span>
+            <a href="/manga-list.html">Category</a>
+            <span> / </span>
+            <span>Post</span>
+        </div>
+    </div>
+    <!-- END BREADCRUM -->
+
+    <!-- MAIN -->
+    <div class="bg-[#121213]">
+        <div class="my_container py-10">
+            <div class="text-white text-4xl font-semibold">
+                Category
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.0/swiper-bundle.min.js"></script>
+</body>
+
+</html>
