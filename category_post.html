@@ -243,381 +243,380 @@
             </div>
         </div>
 
-        <!-- CATEGORIES -->
-        <div class="w-4/12 max-sm:w-full py-4">
-            <!-- CATEGORIES SLIDE-->
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    new Swiper('#categorySwiper', {
-                        spaceBetween: 20,
-                        navigation: {
-                            nextEl: '#swiper-next',
-                            prevEl: '#swiper-prev',
-                        },
-                    });
+       <!-- CATEGORIES -->
+       <div class="w-4/12 max-sm:w-full py-4">
+        <!-- CATEGORIES SLIDE-->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                new Swiper('#categorySwiper', {
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: '#swiper-next',
+                        prevEl: '#swiper-prev',
+                    },
                 });
-            </script>
-            <div class="w-full flex items-center justify-between pb-4 border-b-2 border-white">
-                <h2 class="font-semibold text-2xl text-white">Categories</h2>
-                <div class="grid grid-cols-2 gap-2">
-                    <button id="swiper-prev" class="flex items-center justify-center bg-gray-700 p-2">
-                        <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
-                          </svg>                              
-                    </button>
-                    <button id="swiper-next" class="flex items-center justify-center bg-gray-700 p-2">
-                        <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-                          </svg>                              
-                    </button>
-                </div>
+            });
+        </script>
+        <div class="w-full flex items-center justify-between pb-4 border-b-2 border-white">
+            <h2 class="font-semibold text-2xl text-white">Categories</h2>
+            <div class="grid grid-cols-2 gap-2">
+                <button id="swiper-prev" class="flex items-center justify-center bg-gray-700 p-2">
+                    <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m15 19-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="swiper-next" class="flex items-center justify-center bg-gray-700 p-2">
+                    <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m9 5 7 7-7 7" />
+                    </svg>
+                </button>
             </div>
-            <div class="grid grid-cols-1 grid-flow-row gap-4 py-4">
-                <div id="categorySwiper" class="swiper w-full">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="grid grid-cols-2 grid-rows-2 gap-4">
-                                <div class="w-full h-[167px] p-[15px] bg-red-500"></div>
-                                <div class="w-full h-[167px] p-[15px] bg-red-500"></div>
-                                <div class="w-full h-[167px] p-[15px] bg-red-500"></div>
-                                <div class="w-full h-[167px] p-[15px] bg-red-500"></div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="grid grid-cols-2 grid-rows-2 gap-4">
-                                <div class="w-full h-[167px] p-[15px] bg-green-500"></div>
-                                <div class="w-full h-[167px] p-[15px] bg-green-500"></div>
-                                <div class="w-full h-[167px] p-[15px] bg-green-500"></div>
-                                <div class="w-full h-[167px] p-[15px] bg-green-500"></div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="grid grid-cols-2 grid-rows-2 gap-4">
-                                <div class="w-full h-[167px] p-[15px] bg-indigo-500"></div>
-                                <div class="w-full h-[167px] p-[15px] bg-indigo-500"></div>
-                                <div class="w-full h-[167px] p-[15px] bg-indigo-500"></div>
-                                <div class="w-full h-[167px] p-[15px] bg-indigo-500"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RECENT -->
-            <div x-data="{openRecent: true, openPopular: false, openTrendy: false}" class="">
-                <div class="w-full pb-4">
-                    <div class="grid grid-cols-3 divide-x border-2 border-gray-300 md:text-sm">
-                        <button x-on:click="openRecent = true, openPopular = false, openTrendy = false"
-                            :class="openRecent ? 'bg-red-500 text-white' : ''"
-                            class="p-4 md:px-1 font-semibold hover:bg-red-500 uppercase">recent</button>
-                        <button x-on:click="openRecent = false, openPopular = true, openTrendy = false"
-                            :class="openPopular ? 'bg-red-500 text-white' : ''"
-                            class="p-4 md:px-1 font-semibold hover:bg-red-500 uppercase">popular</button>
-                        <button x-on:click="openRecent = false, openPopular = false, openTrendy = true"
-                            :class="openTrendy ? 'bg-red-500 text-white' : ''"
-                            class="p-4 md:px-1 font-semibold hover:bg-red-500 uppercase">trendy</button>
-                    </div>
-                </div>
-                <div x-show="openRecent" class="grid grid-cols-1 grid-flow-row gap-4">
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-red-500 text white font-semibold inline">Manga</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-red-500 text white font-semibold inline">Manga</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-red-500 text white font-semibold inline">Manga</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-red-500 text white font-semibold inline">Manga</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div x-show="openPopular" x-cloak class="grid grid-cols-1 grid-flow-row gap-4">
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-rose-500 text white font-semibold inline">Manhwa</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-rose-500 text white font-semibold inline">Manhwa</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-rose-500 text white font-semibold inline">Manhwa</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-rose-500 text white font-semibold inline">Manhwa</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div x-show="openTrendy" x-cloak class="grid grid-cols-1 grid-flow-row gap-4">
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-gray-600 text white font-semibold inline">Manhua</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-gray-600 text white font-semibold inline">Manhua</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-gray-600 text white font-semibold inline">Manhua</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full flex gap-4">
-                        <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="flex flex-col gap-4">
-                            <div class="flex items-center">
-                                <a href="#"
-                                    class="py-1 px-2 border border-transparent bg-gray-600 text white font-semibold inline">Manhua</a>
-                            </div>
-                            <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
-                                is
-                                stronger than Kaido</a>
-                            <div class="flex items-center gap-4">
-                                <span class="text-gray-500">By <a href="#">Admin</a></span>
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M5 12h14" />
-                                </svg>
-                                <span class="text-gray-500">400 Views</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CATEGORIES TAG -->
-            <div class="">
-                <div class="w-full flex items-center justify-between pb-4 border-b-2 border-white">
-                    <h2 class="font-semibold text-2xl text-white">Tag</h2>
-                    <a href="#" class="text-white">View all</a>
-                </div>
-                <div class="flex items-center flex-wrap gap-4 pt-4">
-                    <span
-                        class="py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center">Anime</span>
-                    <span
-                        class="py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center">Manhwa</span>
-                    <span
-                        class="py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center">Manga</span>
-                    <span
-                        class="py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center">Manhua</span>
-                    <span
-                        class="py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center">Webtoons</span>
-                    <span
-                        class="py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center">Murim</span>
-                    <span
-                        class="py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center">Drama</span>
-                    <span
-                        class="py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center">Shounen</span>
-                </div>
-            </div>
-
         </div>
+        <div class="grid grid-cols-1 grid-flow-row gap-4 py-4">
+            <div id="categorySwiper" class="swiper w-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="grid grid-cols-2 grid-rows-2 gap-4">
+                            <div class="w-full h-[167px] p-[15px] bg-red-500"></div>
+                            <div class="w-full h-[167px] p-[15px] bg-red-500"></div>
+                            <div class="w-full h-[167px] p-[15px] bg-red-500"></div>
+                            <div class="w-full h-[167px] p-[15px] bg-red-500"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="grid grid-cols-2 grid-rows-2 gap-4">
+                            <div class="w-full h-[167px] p-[15px] bg-green-500"></div>
+                            <div class="w-full h-[167px] p-[15px] bg-green-500"></div>
+                            <div class="w-full h-[167px] p-[15px] bg-green-500"></div>
+                            <div class="w-full h-[167px] p-[15px] bg-green-500"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="grid grid-cols-2 grid-rows-2 gap-4">
+                            <div class="w-full h-[167px] p-[15px] bg-indigo-500"></div>
+                            <div class="w-full h-[167px] p-[15px] bg-indigo-500"></div>
+                            <div class="w-full h-[167px] p-[15px] bg-indigo-500"></div>
+                            <div class="w-full h-[167px] p-[15px] bg-indigo-500"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RECENT -->
+        <div x-data="{openRecent: true, openPopular: false, openTrendy: false}" class="">
+            <div class="w-full pb-4">
+                <div class="grid grid-cols-3 divide-x border-2 border-gray-300 md:text-sm">
+                    <button x-on:click="openRecent = true, openPopular = false, openTrendy = false"
+                        :class="openRecent ? 'bg-red-500 text-white' : ''"
+                        class="p-4 md:px-1 font-semibold hover:bg-red-500 uppercase">recent</button>
+                    <button x-on:click="openRecent = false, openPopular = true, openTrendy = false"
+                        :class="openPopular ? 'bg-red-500 text-white' : ''"
+                        class="p-4 md:px-1 font-semibold hover:bg-red-500 uppercase">popular</button>
+                    <button x-on:click="openRecent = false, openPopular = false, openTrendy = true"
+                        :class="openTrendy ? 'bg-red-500 text-white' : ''"
+                        class="p-4 md:px-1 font-semibold hover:bg-red-500 uppercase">trendy</button>
+                </div>
+            </div>
+            <div x-show="openRecent" class="list_col-1">
+                <!--card items-->
+                <div class="card_container">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="card_content">
+                        <div class="card_tag">
+                            <a href="#" class="bg-red-500">Manga</a>
+                        </div>
+                        <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="card_meta">
+                            <span>By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span>400 Views</span>
+                        </div>
+                    </div>
+                </div>
+                <!--end card items-->
+                <!--card items-->
+                <div class="card_container">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="card_content">
+                        <div class="card_tag">
+                            <a href="#" class="bg-red-500">Manga</a>
+                        </div>
+                        <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="card_meta">
+                            <span>By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span>400 Views</span>
+                        </div>
+                    </div>
+                </div>
+                <!--end card items-->
+                <!--card items-->
+                <div class="card_container">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="card_content">
+                        <div class="card_tag">
+                            <a href="#" class="bg-red-500">Manga</a>
+                        </div>
+                        <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="card_meta">
+                            <span>By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span>400 Views</span>
+                        </div>
+                    </div>
+                </div>
+                <!--end card items-->
+                <!--card items-->
+                <div class="card_container">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="card_content">
+                        <div class="card_tag">
+                            <a href="#" class="bg-red-500">Manga</a>
+                        </div>
+                        <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="card_meta">
+                            <span>By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span>400 Views</span>
+                        </div>
+                    </div>
+                </div>
+                <!--end card items-->
+            </div>
+            <div x-show="openPopular" x-cloak class="grid grid-cols-1 grid-flow-row gap-4">
+                <div class="w-full flex gap-4">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center">
+                            <a href="#"
+                                class="py-1 px-2 border border-transparent bg-rose-500 text white font-semibold inline">Manhwa</a>
+                        </div>
+                        <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-500">By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-500">400 Views</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex gap-4">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center">
+                            <a href="#"
+                                class="py-1 px-2 border border-transparent bg-rose-500 text white font-semibold inline">Manhwa</a>
+                        </div>
+                        <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-500">By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-500">400 Views</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex gap-4">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center">
+                            <a href="#"
+                                class="py-1 px-2 border border-transparent bg-rose-500 text white font-semibold inline">Manhwa</a>
+                        </div>
+                        <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-500">By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-500">400 Views</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex gap-4">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center">
+                            <a href="#"
+                                class="py-1 px-2 border border-transparent bg-rose-500 text white font-semibold inline">Manhwa</a>
+                        </div>
+                        <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-500">By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-500">400 Views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div x-show="openTrendy" x-cloak class="grid grid-cols-1 grid-flow-row gap-4">
+                <div class="w-full flex gap-4">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center">
+                            <a href="#"
+                                class="py-1 px-2 border border-transparent bg-gray-600 text white font-semibold inline">Manhua</a>
+                        </div>
+                        <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-500">By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-500">400 Views</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex gap-4">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center">
+                            <a href="#"
+                                class="py-1 px-2 border border-transparent bg-gray-600 text white font-semibold inline">Manhua</a>
+                        </div>
+                        <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-500">By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-500">400 Views</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex gap-4">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center">
+                            <a href="#"
+                                class="py-1 px-2 border border-transparent bg-gray-600 text white font-semibold inline">Manhua</a>
+                        </div>
+                        <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-500">By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-500">400 Views</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex gap-4">
+                    <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center">
+                            <a href="#"
+                                class="py-1 px-2 border border-transparent bg-gray-600 text white font-semibold inline">Manhua</a>
+                        </div>
+                        <a href="#" class="text-white font-semibold">One Piece confirms one of the Five Elder Stars
+                            is
+                            stronger than Kaido</a>
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-500">By <a href="#">Admin</a></span>
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14" />
+                            </svg>
+                            <span class="text-gray-500">400 Views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CATEGORIES TAG -->
+        <div class="py-4">
+            <div class="w-full flex items-center justify-between pb-4 border-b-2 border-white">
+                <h2 class="font-semibold text-2xl text-white">Tag</h2>
+                <a href="#" class="text-white hover:underline underline-offset-2">View all</a>
+            </div>
+            <div class="tag_container">
+                <a href="#">Anime</a>
+                <a href="#">Manhwa</a>
+                <a href="#">Manga</a>
+                <a href="#">Manhua</a>
+                <a href="#">Webtoons</a>
+                <a href="#">Murim</a>
+                <a href="#">Drama</a>
+                <a href="#">Shounen</a>
+            </div>
+        </div>
+
+    </div>
     </div>
 
 

@@ -1,0 +1,7 @@
+.tag_container{
+    @apply flex items-center flex-wrap gap-4 pt-4;
+
+    & a{
+        @apply py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center;
+    }
+}
