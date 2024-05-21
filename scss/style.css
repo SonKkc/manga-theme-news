@@ -109,6 +109,27 @@ input {
 }
 
 /* End Navbar mobile */
+/* Category dropdown */
+.category_dropdown {
+  @apply h-fit bg-[#121213] z-20 absolute w-full border-gray-700 shadow-sm border-y max-h-[360px] overflow-y-scroll;
+}
+
+.category_grid {
+  @apply my_container grid grid-cols-3 grid-flow-row gap-4 px-4 py-5 text-white md:px-6;
+}
+.category_grid .category_list {
+  @apply w-full relative;
+}
+.category_grid .category_list img {
+  @apply h-24 w-full object-cover rounded-lg;
+}
+.category_grid .category_list div {
+  @apply absolute left-0 top-0 w-full h-full bg-black bg-opacity-50 hover:bg-opacity-25 flex items-center justify-center;
+}
+.category_grid .category_list span {
+  @apply text-white font-semibold text-2xl;
+}
+
 .hero_left {
   @apply w-7/12 w-full max-sm:w-full;
 }
@@ -135,7 +156,7 @@ input {
   @apply flex flex-col justify-end text-white text-center max-sm:pt-6 h-full;
 }
 .hero_title-text p {
-  @apply font-semibold text-4xl max-sm:text-base text-ellipsis overflow-hidden pb-4;
+  @apply font-semibold text-4xl max-sm:text-base pb-4;
 }
 .hero_title-text h2 {
   @apply font-semibold pb-2;
@@ -146,10 +167,10 @@ input {
 }
 
 .card_container {
-  @apply w-full flex gap-4;
+  @apply w-full flex gap-4 max-sm:flex-wrap;
 }
 .card_container img {
-  @apply object-cover;
+  @apply object-cover max-sm:w-full;
 }
 
 .card_content {
@@ -181,10 +202,10 @@ input {
 }
 
 .News_card_container {
-  @apply w-full flex gap-4 overflow-hidden max-h-64;
+  @apply w-full flex gap-4 overflow-hidden  max-sm:flex-wrap;
 }
 .News_card_container img {
-  @apply w-56 h-64 object-cover;
+  @apply w-56 h-64 object-cover max-sm:w-full max-sm:h-48;
 }
 
 .card_description {
@@ -221,9 +242,127 @@ input {
   @apply grid grid-cols-1 grid-flow-row gap-4;
 }
 
+.category_swiper-container {
+  @apply grid grid-cols-1 grid-flow-row gap-4 py-4;
+}
+.category_swiper-container .swiper-block {
+  @apply grid grid-cols-2 grid-rows-2 gap-4;
+}
+.category_swiper-container .swiper-img {
+  @apply w-full h-[167px] relative;
+}
+.category_swiper-container .swiper-img img {
+  @apply w-full h-full object-cover;
+}
+.category_swiper-container .swiper-img div {
+  @apply absolute left-0 top-0 w-full h-full bg-black bg-opacity-50 hover:bg-opacity-25 flex items-center justify-center;
+}
+.category_swiper-container .swiper-img span {
+  @apply text-white font-semibold text-2xl;
+}
+
 .tag_container {
   @apply flex items-center flex-wrap gap-4 pt-4;
 }
 .tag_container a {
   @apply py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center;
+}
+
+.post_hero {
+  @apply w-full h-[700px] flex flex-col justify-end overflow-hidden relative bg-no-repeat bg-cover py-20;
+}
+
+.post_hero-overlay {
+  @apply absolute bottom-0 left-0 right-0 bg-gray-900/50 w-full h-full;
+}
+
+.post_hero-content {
+  @apply grid lg:grid-cols-5 max-sm:grid-cols-1 md:grid-cols-1 gap-4;
+}
+.post_hero-content .date_block {
+  @apply lg:h-52 lg:w-52 md:w-44 md:h-44 max-sm:w-40 max-sm:h-40 bg-red-500 flex items-center justify-center;
+}
+.post_hero-content .date_block span:first-child {
+  @apply uppercase text-2xl font-semibold;
+}
+.post_hero-content .date_block span:last-child {
+  @apply uppercase text-4xl font-bold;
+}
+
+.post_container {
+  @apply my_container flex gap-4 max-sm:flex-wrap;
+}
+
+.post_detail {
+  @apply pb-10 border-b border-gray-300;
+}
+
+.post_detail-content h2 {
+  @apply text-white font-semibold text-4xl pb-4;
+}
+.post_detail-content h3 {
+  @apply text-white font-semibold text-2xl pb-4;
+}
+.post_detail-content p {
+  @apply text-gray-400 pb-4;
+}
+.post_detail-content img {
+  @apply w-full h-full object-cover pb-4;
+}
+
+.share_container {
+  @apply flex flex-wrap items-center gap-4;
+}
+.share_container .share_text {
+  @apply text-white text-2xl font-semibold;
+}
+.share_container .social_block {
+  @apply py-2 px-6 flex items-center gap-4 justify-center;
+}
+.share_container .social_block span {
+  @apply text-white font-semibold;
+}
+
+.author_container {
+  @apply py-10 flex items-center flex-wrap gap-4 border-b border-gray-300;
+}
+.author_container img {
+  @apply w-24 h-24 object-cover rounded-full;
+}
+.author_container .author_detail {
+  @apply flex flex-col gap-2;
+}
+.author_container .author_detail span:first-child {
+  @apply text-white hover:text-red-500 font-semibold text-xl;
+}
+.author_container .author_detail span:last-child {
+  @apply text-gray-400;
+}
+
+.post_pagination-container {
+  @apply flex items-center max-sm:flex-wrap justify-between py-10 gap-4;
+}
+.post_pagination-container .pagination_btn {
+  @apply flex flex-col gap-4 bg-gray-600 md:w-1/2 p-7 max-h-40 overflow-hidden max-sm:w-full;
+}
+.post_pagination-container .pagination_btn .btn-icon {
+  @apply flex items-center justify-center p-2;
+}
+.post_pagination-container .pagination_btn span {
+  @apply text-white font-semibold;
+}
+.post_pagination-container .pagination_btn p {
+  @apply text-white text-xl font-semibold text-ellipsis overflow-hidden text-left;
+}
+.post_pagination-container .pagination_btn:hover {
+  @apply bg-gray-700;
+}
+.post_pagination-container .pagination_btn:hover .btn-icon {
+  @apply bg-red-500;
+}
+.post_pagination-container .pagination_btn:hover span {
+  @apply text-red-500;
+}
+.post_pagination-container .pagination_btn:hover p {
+  @apply underline underline-offset-2;
 }/*# sourceMappingURL=style.css.map */

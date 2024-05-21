@@ -1,3 +1,27 @@
+.category_swiper-container{
+    @apply grid grid-cols-1 grid-flow-row gap-4 py-4;
+
+    & .swiper-block{
+        @apply grid grid-cols-2 grid-rows-2 gap-4;
+    }
+
+    & .swiper-img{
+        @apply w-full h-[167px] relative;
+
+        & img{
+            @apply w-full h-full object-cover;
+        }
+
+        & div{
+            @apply absolute left-0 top-0 w-full h-full bg-black bg-opacity-50 hover:bg-opacity-25 flex items-center justify-center;
+        }
+
+        & span{
+            @apply text-white font-semibold text-2xl;
+        }
+    }
+}
+
 .tag_container{
     @apply flex items-center flex-wrap gap-4 pt-4;
 

@@ -1,0 +1,123 @@
+// <!--post hero-->
+.post_hero {
+    @apply w-full h-[700px] flex flex-col justify-end overflow-hidden relative bg-no-repeat bg-cover py-20;
+}
+
+.post_hero-overlay {
+    @apply absolute bottom-0 left-0 right-0 bg-gray-900/50 w-full h-full;
+}
+
+.post_hero-content {
+    @apply grid lg:grid-cols-5 max-sm:grid-cols-1 md:grid-cols-1 gap-4;
+
+    & .date_block{
+       @apply lg:h-52 lg:w-52 md:w-44 md:h-44 max-sm:w-40 max-sm:h-40 bg-red-500 flex items-center justify-center;
+        
+        & span:first-child{
+           @apply uppercase text-2xl font-semibold;
+        }
+
+         & span:last-child{
+              @apply uppercase text-4xl font-bold;
+         }
+    }
+    
+}
+
+.post_container{
+    @apply my_container flex gap-4 max-sm:flex-wrap;
+}
+
+.post_detail{
+    @apply pb-10 border-b border-gray-300;
+}
+
+.post_detail-content{
+    & h2{
+        @apply text-white font-semibold text-4xl pb-4;
+    }
+
+    & h3{
+        @apply text-white font-semibold text-2xl pb-4;
+    }
+
+    & p{
+        @apply text-gray-400 pb-4;
+    }
+
+    & img{
+        @apply w-full h-full object-cover pb-4;
+    }
+}
+
+.share_container{
+    @apply flex flex-wrap items-center gap-4;
+
+    .share_text{
+        @apply text-white text-2xl font-semibold;
+    }
+
+    .social_block{
+        @apply py-2 px-6 flex items-center gap-4 justify-center;
+
+        & span{
+            @apply text-white font-semibold;
+        }
+    }
+}
+
+.author_container{
+    @apply py-10 flex items-center flex-wrap gap-4 border-b border-gray-300;
+
+    & img{
+        @apply w-24 h-24 object-cover rounded-full;
+    }
+
+    & .author_detail{
+        @apply flex flex-col gap-2;
+
+        & span:first-child{
+            @apply text-white hover:text-red-500 font-semibold text-xl;
+        }
+
+        & span:last-child{
+            @apply text-gray-400;
+        }
+    }
+}
+
+.post_pagination-container{
+    @apply flex items-center max-sm:flex-wrap justify-between py-10 gap-4;
+    
+    .pagination_btn{
+        @apply flex flex-col gap-4 bg-gray-600 md:w-1/2 p-7 max-h-40 overflow-hidden max-sm:w-full;
+
+        .btn-icon{
+            @apply flex items-center justify-center p-2;
+        }
+
+        & span{
+            @apply text-white font-semibold;
+        }
+
+        & p{
+            @apply text-white text-xl font-semibold text-ellipsis overflow-hidden text-left;
+        }
+    }
+
+    .pagination_btn:hover{
+        @apply bg-gray-700;
+    }
+
+    .pagination_btn:hover .btn-icon{
+        @apply bg-red-500;
+    }
+
+    .pagination_btn:hover span{
+        @apply text-red-500;
+    }
+
+    .pagination_btn:hover p{
+        @apply underline underline-offset-2;
+    }
+}

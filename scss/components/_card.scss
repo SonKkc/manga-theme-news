@@ -1,8 +1,8 @@
 .card_container{
-    @apply w-full flex gap-4;
+    @apply w-full flex gap-4 max-sm:flex-wrap;
 
     & img{
-        @apply object-cover;
+        @apply object-cover max-sm:w-full;
     }
 }
 
@@ -41,10 +41,10 @@
 
 // <!-- News content -->
 .News_card_container {
-    @apply w-full flex gap-4 overflow-hidden max-h-64;
+    @apply w-full flex gap-4 overflow-hidden  max-sm:flex-wrap;
 
     & img{
-        @apply w-56 h-64 object-cover;
+        @apply w-56 h-64 object-cover max-sm:w-full max-sm:h-48;
     }
 }
 

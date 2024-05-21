@@ -25,7 +25,7 @@
 .hero_title-text {
     @apply flex flex-col justify-end text-white text-center max-sm:pt-6 h-full;
     & p {
-        @apply font-semibold text-4xl max-sm:text-base text-ellipsis overflow-hidden pb-4;
+        @apply font-semibold text-4xl max-sm:text-base pb-4;
     }
 
     & h2 {

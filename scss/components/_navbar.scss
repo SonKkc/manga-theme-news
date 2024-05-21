@@ -42,3 +42,29 @@
   @apply py-2 flex items-center
 }
 /* End Navbar mobile */
+
+/* Category dropdown */
+.category_dropdown {
+  @apply h-fit bg-[#121213] z-20 absolute w-full border-gray-700 shadow-sm border-y max-h-[360px] overflow-y-scroll
+}
+
+.category_grid {
+  @apply my_container grid grid-cols-3 grid-flow-row gap-4 px-4 py-5 text-white md:px-6;
+
+  & .category_list{
+    @apply w-full relative;
+
+    & img{
+      @apply h-24 w-full object-cover rounded-lg;
+    }
+
+    & div{
+      @apply absolute left-0 top-0 w-full h-full bg-black bg-opacity-50 hover:bg-opacity-25 flex items-center justify-center;
+    }
+
+    & span{
+        @apply text-white font-semibold text-2xl;
+    } 
+  }
+}
+
