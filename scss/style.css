@@ -167,10 +167,10 @@ input {
 }
 
 .card_container {
-  @apply w-full flex gap-4 max-sm:flex-wrap;
+  @apply w-full flex gap-4 max-[1023px]:flex-wrap max-sm:flex-wrap;
 }
 .card_container img {
-  @apply object-cover max-sm:w-full;
+  @apply object-cover max-sm:w-full max-[1023px]:w-full;
 }
 
 .card_content {
@@ -205,7 +205,7 @@ input {
   @apply w-full flex gap-4 overflow-hidden  max-sm:flex-wrap;
 }
 .News_card_container img {
-  @apply w-56 h-64 object-cover max-sm:w-full max-sm:h-48;
+  @apply lg:w-56 lg:h-64 object-cover md:w-44  max-sm:w-full max-sm:h-48;
 }
 
 .card_description {
@@ -219,7 +219,7 @@ input {
   @apply relative;
 }
 .Most_views-card_container .item img {
-  @apply w-72 h-80 object-cover max-md:w-44 max-sm:w-full md:h-44;
+  @apply w-[280px] h-80 object-cover max-[1023px]:w-44 max-sm:w-screen md:h-44;
 }
 .Most_views-card_container .item .content {
   @apply absolute w-full h-2/3 bottom-0 left-0 right-0 bg-gradient-to-t from-gray-700 overflow-hidden;
@@ -240,6 +240,10 @@ input {
 
 .list_col-1 {
   @apply grid grid-cols-1 grid-flow-row gap-4;
+}
+
+.list_col-5 {
+  @apply grid grid-cols-5 grid-flow-row gap-4 max-sm:grid-cols-1 max-[1023px]:grid-cols-3;
 }
 
 .category_swiper-container {
@@ -266,6 +270,36 @@ input {
 }
 .tag_container a {
   @apply py-1 px-2 border-2 border-gray-500 text-sm text-gray-300 hover:text-white hover:bg-red-500 hover:border-transparent text-center;
+}
+
+.footer {
+  @apply bg-gray-900 text-gray-200 text-sm mt-20;
+}
+
+.modal {
+  @apply fixed inset-0 z-50 opacity-0 invisible top-0 -translate-y-full transition-all;
+}
+
+.modal.show {
+  @apply opacity-100 visible translate-y-0;
+}
+
+.modal .overlay {
+  @apply absolute inset-0 bg-gray-900/20 backdrop-blur transition-all;
+}
+
+.modal .modal_content {
+  @apply relative px-6 py-12 bg-white;
+}
+
+.pagination {
+  @apply text-center mt-4 flex flex-wrap justify-center;
+}
+
+.pagination li a {
+  @apply flex_center;
+  @apply border border-gray-400 hover:border-amber-500;
+  @apply w-10 h-10 text-sm text-gray-400 hover:text-amber-500;
 }
 
 .post_hero {
@@ -365,4 +399,21 @@ input {
 }
 .post_pagination-container .pagination_btn:hover p {
   @apply underline underline-offset-2;
+}
+
+.category_list-item {
+  @apply flex flex-col gap-2 bg-gradient-to-b from-indigo-500;
+}
+.category_list-item img {
+  @apply w-full h-56 max-sm:w-full object-cover;
+}
+.category_list-item span {
+  @apply text-2xl text-white font-semibold;
+}
+
+.category_list-item:hover {
+  @apply transition from-red-500;
+}
+.category_list-item:hover span {
+  @apply transition text-red-500;
 }/*# sourceMappingURL=style.css.map */

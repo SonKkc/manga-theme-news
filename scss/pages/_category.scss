@@ -1,0 +1,19 @@
+.category_list-item {
+    @apply flex flex-col gap-2 bg-gradient-to-b from-indigo-500;
+
+    & img{
+        @apply w-full h-56 max-sm:w-full object-cover;
+    }
+
+    & span{
+        @apply text-2xl text-white font-semibold;
+    }
+}
+
+.category_list-item:hover{
+    @apply transition from-red-500;
+
+    & span{
+        @apply transition text-red-500;
+    }
+}

@@ -1,8 +1,8 @@
 .card_container{
-    @apply w-full flex gap-4 max-sm:flex-wrap;
+    @apply w-full flex gap-4 max-[1023px]:flex-wrap max-sm:flex-wrap;
 
     & img{
-        @apply object-cover max-sm:w-full;
+        @apply object-cover max-sm:w-full max-[1023px]:w-full;
     }
 }
 
@@ -44,7 +44,7 @@
     @apply w-full flex gap-4 overflow-hidden  max-sm:flex-wrap;
 
     & img{
-        @apply w-56 h-64 object-cover max-sm:w-full max-sm:h-48;
+        @apply lg:w-56 lg:h-64 object-cover md:w-44  max-sm:w-full max-sm:h-48;
     }
 }
 
@@ -61,7 +61,7 @@
         @apply relative;
 
         & img{
-            @apply w-72 h-80 object-cover max-md:w-44 max-sm:w-full md:h-44;
+            @apply w-[280px] h-80 object-cover max-[1023px]:w-44 max-sm:w-screen md:h-44;
         }
 
         & .content{

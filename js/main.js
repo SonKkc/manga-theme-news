@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    console.log('Document is ready');
     const body = document.getElementById('body');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuBody = document.getElementById('mobile-menu-body');
     const mobileMenuButtons = document.querySelectorAll('[data-toggle="mobile-menu"]');
     const modalButtons = document.getElementsByClassName('modal_toggle');
+    console.log(modalButtons);
 
     function toggleMobileMenu() {
         toggleMultiClass(mobileMenu, ['show']);

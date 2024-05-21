@@ -1,0 +1,8 @@
+.pagination {
+  @apply text-center mt-4 flex flex-wrap justify-center
+}
+.pagination li a {
+  @apply flex_center;
+  @apply border border-gray-400 hover:border-amber-500;
+  @apply w-10 h-10 text-sm text-gray-400 hover:text-amber-500
+}

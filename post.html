@@ -11,11 +11,9 @@
 </head>
 
 <body>
-    <!-- Background -->
-    <!-- <img src="/images/backgrounds/radial-1.svg" class="site_overlay" alt="" /> -->
 
     <!-- NAVBAR -->
-    <header id="navbar" class="navbar bg-[#121213]">
+    <header id="navbar" class="navbar bg-[#121213] relative" x-data="{categoryDropdown: false}">
         <div class="my_container flex_between">
             <div class="navbar_logo">
                 <a class="inline-block py-5" href="/">
@@ -27,11 +25,17 @@
                 <a href="/" title="Home" aria-label="Home" class="navbar_menu_item">
                     Home
                 </a>
-                <a href="/" title="Ranking" aria-label="Ranking" class="navbar_menu_item">
-                    News
-                </a>
+                <div title="Ranking" x-on:click="categoryDropdown = !categoryDropdown" aria-label="Ranking"
+                    class="navbar_menu_item flex items-center gap-2 cursor-pointer">
+                    Category
+                    <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 9-7 7-7-7" />
+                    </svg>
+                </div>
                 <a href="/manga-list.html" title="Manga List" aria-label="Manga List" class="navbar_menu_item">
-                    Manga List
+                    Post
                 </a>
                 <a href="#" title="Group" aria-label="Group" class="navbar_menu_item">
                     Group
@@ -56,6 +60,107 @@
                             stroke-linejoin="round" />
                     </svg>
                 </button>
+            </div>
+        </div>
+        <div x-show="categoryDropdown" x-cloak id="mega-menu-full-dropdown"
+            x-on:click.outside="categoryDropdown = false" class="category_dropdown">
+            <div class="category_grid">
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Manga-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Manga</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Manhwa-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Manhwa</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Manhua-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Manhua</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Murim-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Murim</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Manga-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Manga</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Manhwa-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Manhwa</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Manhua-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Manhua</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Murim-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Murim</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Manga-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Manga</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Manhwa-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Manhwa</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Manhua-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Manhua</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
+                <!--Categorry list-->
+                <a href="/category.html" class="category_list">
+                    <img src="/images/category/Murim-category.png" alt="" class="">
+                    <div class="">
+                        <span class="">Murim</span>
+                    </div>
+                </a>
+                <!--End categorry list-->
             </div>
         </div>
     </header>
@@ -93,7 +198,8 @@
                         stronger than Kaido</a>
                     <div class="flex items-center gap-4 flex-wrap">
                         <img src="/images/demo/avatar_1.jpg" alt="" class="w-14 h-14 object-cover rounded-full">
-                        <span class="text-white hover:underline underline-offset-2 cursor-pointer"><a href="#">Manganewstheme</a></span>
+                        <span class="text-white hover:underline underline-offset-2 cursor-pointer"><a
+                                href="#">Manganewstheme</a></span>
                         .
                         <span class="text-white>">August 28, 2023</span>
                         <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -102,8 +208,8 @@
                                 d="M5 12h14" />
                         </svg>
                         <span class="text-white">400 Views</span>
-                        <svg class="w-6 h-6 text-white" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
                                 d="M7.926 10.898 15 7.727m-7.074 5.39L15 16.29M8 12a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm12 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm0-11a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" />
                         </svg>
@@ -179,9 +285,8 @@
                         <span class="share_text">Share:</span>
 
                         <a href="#" class="social_block bg-[#3C5998]">
-                            <svg class="w-6 h-6 text-white" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <path fill-rule="evenodd"
                                     d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
                                     clip-rule="evenodd" />
@@ -190,9 +295,8 @@
                         </a>
 
                         <a href="#" class="social_block bg-black justify-center border border-gray-600">
-                            <svg class="w-6 h-6 text-white" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z" />
                             </svg>
@@ -200,9 +304,8 @@
                         </a>
 
                         <a href="#" class="social_block bg-[#007BB6]">
-                            <svg class="w-6 h-6 text-white" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                                 <path fill-rule="evenodd"
                                     d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z"
                                     clip-rule="evenodd" />
@@ -212,9 +315,8 @@
                         </a>
 
                         <a href="#" class="social_block bg-[#FF1501]">
-                            <svg class="w-6 h-6 text-white" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path fill="currentColor"
                                     d="M12.008 16.521a3.84 3.84 0 0 0 2.47-.77v.04a.281.281 0 0 0 .005-.396.281.281 0 0 0-.395-.005 3.291 3.291 0 0 1-2.09.61 3.266 3.266 0 0 1-2.081-.63.27.27 0 0 0-.38.381 3.84 3.84 0 0 0 2.47.77Z" />
                                 <path fill="currentColor" fill-rule="evenodd"
@@ -280,45 +382,43 @@
                 </div>
 
                 <!-- PAGINATION-->
-                    <div class="post_pagination-container">
-                        <a href="#" class="pagination_btn">
-                            <div class="flex items-center gap-4">
-                                <button class="btn-icon">
-                                    <svg class="w-5 h-5 text-white" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                        viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m15 19-7-7 7-7" />
-                                    </svg>
-                                </button>
-                                <span class="">Previous Post</span>
-                            </div>
-                            <p class="">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda tempora
-                                excepturi, corrupti ut necessitatibus aspernatur itaque fugit velit doloribus amet,
-                                sequi nesciunt porro illum vero neque quod laudantium quo consequatur. </p>
-                        </a>
-                        <a href="#" class="pagination_btn items-end">
-                            <div class="flex items-center gap-4">
-                                <span class="">Next Post</span>
-                                <button class="btn-icon">
-                                    <svg class="w-5 h-5 text-white" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                        viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m9 5 7 7-7 7" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <p class="">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda tempora
-                                excepturi, corrupti ut necessitatibus aspernatur itaque fugit velit doloribus amet,
-                                sequi nesciunt porro illum vero neque quod laudantium quo consequatur. </p>
-                        </a>
-                    </div>
+                <div class="post_pagination-container">
+                    <a href="#" class="pagination_btn">
+                        <div class="flex items-center gap-4">
+                            <button class="btn-icon">
+                                <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m15 19-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <span class="">Previous Post</span>
+                        </div>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda tempora
+                            excepturi, corrupti ut necessitatibus aspernatur itaque fugit velit doloribus amet,
+                            sequi nesciunt porro illum vero neque quod laudantium quo consequatur. </p>
+                    </a>
+                    <a href="#" class="pagination_btn items-end">
+                        <div class="flex items-center gap-4">
+                            <span class="">Next Post</span>
+                            <button class="btn-icon">
+                                <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m9 5 7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda tempora
+                            excepturi, corrupti ut necessitatibus aspernatur itaque fugit velit doloribus amet,
+                            sequi nesciunt porro illum vero neque quod laudantium quo consequatur. </p>
+                    </a>
+                </div>
             </div>
 
-            <!-- CATEGORIES -->
+            <!-- RIGHT SECTION -->
             <div class="w-4/12 max-sm:w-full py-4">
                 <!-- CATEGORIES SLIDE-->
                 <script>
@@ -337,111 +437,114 @@
                     <div class="grid grid-cols-2 gap-2">
                         <button id="swiper-prev" class="flex items-center justify-center bg-gray-700 p-2">
                             <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="m15 19-7-7 7-7" />
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m15 19-7-7 7-7" />
                             </svg>
                         </button>
                         <button id="swiper-next" class="flex items-center justify-center bg-gray-700 p-2">
                             <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="m9 5 7 7-7 7" />
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m9 5 7 7-7 7" />
                             </svg>
                         </button>
                     </div>
                 </div>
+                <!--Category swiper-->
                 <div class="category_swiper-container">
                     <div id="categorySwiper" class="swiper w-full">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="swiper-block">
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Manga-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Manga</span>
-                                        </div>  
+                                        </div>
                                     </a>
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Manhwa-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Manhwa</span>
-                                        </div>  
+                                        </div>
                                     </a>
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Manhua-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Manhua</span>
-                                        </div>  
+                                        </div>
                                     </a>
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Murim-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Murim</span>
-                                        </div>  
+                                        </div>
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper-block">
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Manga-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Manga</span>
-                                        </div>  
+                                        </div>
                                     </a>
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Manhwa-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Manhwa</span>
-                                        </div>  
+                                        </div>
                                     </a>
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Manhua-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Manhua</span>
-                                        </div>  
+                                        </div>
                                     </a>
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Murim-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Murim</span>
-                                        </div>  
+                                        </div>
                                     </a>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="swiper-block">
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Manga-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Manga</span>
-                                        </div>  
+                                        </div>
                                     </a>
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Manhwa-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Manhwa</span>
-                                        </div>  
+                                        </div>
                                     </a>
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Manhua-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Manhua</span>
-                                        </div>  
+                                        </div>
                                     </a>
-                                    <a href="#" class="swiper-img">
+                                    <a href="/category.html" class="swiper-img">
                                         <img src="/images/category/Murim-category.png" alt="" class="">
                                         <div class="">
                                             <span class="">Murim</span>
-                                        </div>  
+                                        </div>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- RECENT -->
                 <div x-data="{openRecent: true, openPopular: false, openTrendy: false}" class="">
                     <div class="w-full pb-4">
@@ -459,7 +562,7 @@
                     </div>
                     <div x-show="openRecent" class="list_col-1">
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -470,8 +573,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -481,7 +585,7 @@
                         </div>
                         <!--end card items-->
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -492,8 +596,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -503,7 +608,7 @@
                         </div>
                         <!--end card items-->
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -514,8 +619,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -525,7 +631,7 @@
                         </div>
                         <!--end card items-->
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -536,8 +642,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -549,7 +656,7 @@
                     </div>
                     <div x-show="openPopular" x-cloak class="list_col-1">
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -560,8 +667,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -571,7 +679,7 @@
                         </div>
                         <!--end card items-->
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -582,8 +690,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -593,7 +702,7 @@
                         </div>
                         <!--end card items-->
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -604,8 +713,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -615,7 +725,7 @@
                         </div>
                         <!--end card items-->
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -626,8 +736,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -639,7 +750,7 @@
                     </div>
                     <div x-show="openTrendy" x-cloak class="list_col-1">
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -650,8 +761,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -661,7 +773,7 @@
                         </div>
                         <!--end card items-->
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -672,8 +784,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -683,7 +796,7 @@
                         </div>
                         <!--end card items-->
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -694,8 +807,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -705,7 +819,7 @@
                         </div>
                         <!--end card items-->
                         <!--card items-->
-                        <div class="card_container">
+                        <div class="card_container max-md:flex-wrap">
                             <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
                             <div class="card_content">
                                 <div class="card_tag">
@@ -716,8 +830,9 @@
                                     stronger than Kaido</a>
                                 <div class="card_meta">
                                     <span>By <a href="#">Admin</a></span>
-                                    <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="M5 12h14" />
                                     </svg>
@@ -728,7 +843,7 @@
                         <!--end card items-->
                     </div>
                 </div>
-    
+
                 <!-- CATEGORIES TAG -->
                 <div class="py-4">
                     <div class="w-full flex items-center justify-between pb-4 border-b-2 border-white">
@@ -746,71 +861,72 @@
                         <a href="#">Shounen</a>
                     </div>
                 </div>
-    
+
             </div>
+            <!-- END RIGHT SECTION -->
         </div>
     </div>
 
-   <!-- RELATED POSTS -->
-   <div class="bg-[#121214] p-10 max-sm:p-0">
-    <div class="my_container">
-        <div class="flex justify-between items-center pb-4">
-            <h2 class="font-semibold text-4xl text-white">Most Views</h2>
-            <a href="#" class="text-white underline decoration-1 ">View all</a>
-        </div>
-        <div class="Most_views-card_container">
-            <div class="item">
-                <img src="/images/demo/News-1.png" alt="" class="">
-                <div class="content">
-                    <div class="content-text">
-                        <p class="">Lorem, ipsum dolor sit amet consectetur
-                            adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
-                            Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
-                            accusamus
-                            assumenda saepe corrupti. </p>
-                    </div>
-                </div>
+    <!-- RELATED POSTS -->
+    <div class="bg-[#121214] p-10 max-sm:p-0">
+        <div class="my_container">
+            <div class="flex justify-between items-center pb-4">
+                <h2 class="font-semibold text-4xl text-white">Most Views</h2>
+                <a href="#" class="text-white underline decoration-1 ">View all</a>
             </div>
-            <div class="item">
-                <img src="/images/demo/News-1.png" alt="" class="">
-                <div class="content">
-                    <div class="content-text">
-                        <p class="">Lorem, ipsum dolor sit amet consectetur
-                            adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
-                            Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
-                            accusamus
-                            assumenda saepe corrupti. </p>
+            <div class="Most_views-card_container">
+                <a href="/post.html" class="item">
+                    <img src="/images/category/Manga-category.png" alt="" class="">
+                    <div class="content">
+                        <div class="content-text">
+                            <p class="">Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
+                                Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
+                                accusamus
+                                assumenda saepe corrupti. </p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/demo/News-1.png" alt="" class="">
-                <div class="content">
-                    <div class="content-text">
-                        <p class="">Lorem, ipsum dolor sit amet consectetur
-                            adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
-                            Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
-                            accusamus
-                            assumenda saepe corrupti. </p>
+                </a>
+                <a href="/post.html" class="item">
+                    <img src="/images/category/Manhwa-category.png" alt="" class="">
+                    <div class="content">
+                        <div class="content-text">
+                            <p class="">Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
+                                Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
+                                accusamus
+                                assumenda saepe corrupti. </p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/images/demo/News-1.png" alt="" class="">
-                <div class="content">
-                    <div class="content-text">
-                        <p class="">Lorem, ipsum dolor sit amet consectetur
-                            adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
-                            Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
-                            accusamus
-                            assumenda saepe corrupti. </p>
+                </a>
+                <a href="/post.html" class="item">
+                    <img src="/images/category/Manhua-category.png" alt="" class="">
+                    <div class="content">
+                        <div class="content-text">
+                            <p class="">Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
+                                Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
+                                accusamus
+                                assumenda saepe corrupti. </p>
+                        </div>
                     </div>
-                </div>
+                </a>
+                <a href="/post.html" class="item">
+                    <img src="/images/category/Murim-category.png" alt="" class="">
+                    <div class="content">
+                        <div class="content-text">
+                            <p class="">Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
+                                Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
+                                accusamus
+                                assumenda saepe corrupti. </p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
-</div>
-<!-- END RELATED POSTS -->
+    <!-- END RELATED POSTS -->
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -837,7 +953,7 @@
     <!-- END FOOTER -->
 
     <!-- SEARCH MODAL -->
-    <!-- <div id="search-modal" class="modal">
+    <div id="search-modal" class="modal">
         <div class="overlay modal_toggle" data-modal="search-modal"></div>
 
         <div class="modal_content">
@@ -854,7 +970,7 @@
                 </label>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- END SEARCH MODAL -->
     <!-- MENU MOBILE -->
     <div id="mobile-menu" class="navbar_mobile">
