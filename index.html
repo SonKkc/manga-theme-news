@@ -12,8 +12,8 @@
 
 <body>
     <!-- NAVBAR -->
-    <header id="navbar" class="navbar bg-[#121213] relative" x-data="{categoryDropdown: false}">
-        <div class="my_container flex_between">
+    <header id="navbar" class="navbar z-[30]" x-data="{categoryDropdown: false}">
+        <div class="my_container flex_between z-[30]">
             <div class="navbar_logo">
                 <a class="inline-block py-5" href="/">
                     <img src="/images/logo.png" title="logo" alt="logo" width="110" height="39">
@@ -24,7 +24,7 @@
                 <a href="/" title="Home" aria-label="Home" class="navbar_menu_item">
                     Home
                 </a>
-                <div title="Ranking" x-on:click="categoryDropdown = !categoryDropdown" aria-label="Ranking" class="navbar_menu_item flex items-center gap-2 cursor-pointer">
+                <div title="Ranking" x-on:click="categoryDropdown = !categoryDropdown" @mouseover="categoryDropdown = true" aria-label="Ranking" class="navbar_menu_item flex items-center gap-2 cursor-pointer">
                     Category
                     <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
@@ -58,10 +58,11 @@
                 </button>
             </div>
         </div>
-        <div x-show="categoryDropdown" x-cloak id="mega-menu-full-dropdown" x-on:click.outside="categoryDropdown = false" class="category_dropdown">
+        <div x-show="categoryDropdown" x-cloak id="mega-menu-full-dropdown" x-on:click.outside="categoryDropdown = false" @mouseleave="categoryDropdown = false" 
+            class="category_dropdown">
             <div class="category_grid">
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manga</span>
@@ -69,7 +70,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhwa</span>
@@ -77,7 +78,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhua</span>
@@ -85,7 +86,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <div class="">
                         <span class="">Murim</span>
@@ -93,7 +94,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manga</span>
@@ -101,7 +102,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhwa</span>
@@ -109,7 +110,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhua</span>
@@ -117,7 +118,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <div class="">
                         <span class="">Murim</span>
@@ -125,7 +126,7 @@
                 </a>
                 <!--End categorry list-->
                  <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manga</span>
@@ -133,7 +134,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhwa</span>
@@ -141,7 +142,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhua</span>
@@ -149,7 +150,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <div class="">
                         <span class="">Murim</span>
@@ -160,43 +161,6 @@
         </div>
     </header>
     <!-- END NAVBAR -->
-    <!-- MENU MOBILE -->
-	<div id="mobile-menu" class="navbar_mobile">
-		<div class="overlay" data-toggle="mobile-menu"></div>
-		<button class="close" data-toggle="mobile-menu">
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="#f0f0f0"/></svg>
-		</button>
-
-		<div id="mobile-menu-body" class="navbar_mobile_menu" x-data="{openCateDropdown: false}">
-			<div class="pb-6">
-				<a class="inline-block py-4" href="/">
-					<img src="/images/logo.png" title="logo" alt="logo" width="110" height="39">
-				</a>
-			</div>
-
-			<a href="/" title="Home" aria-label="Home" class="nav_item">
-				<svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-				Home
-			</a>
-			<a href="/category.html" title="Categories" aria-label="Categories" class="text-white py-2 flex items-center">
-				<svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-				Categories
-			</a>
-            <a href="/category_post.html" title="Group" aria-label="Group" class="text-white py-2 flex items-center">
-				<svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-				Post
-			</a>
-			<a href="/" title="Group" aria-label="Group" class="text-white py-2 flex items-center">
-				<svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-				Group
-			</a>
-			<a href="/" title="Fanpage" aria-label="Fanpage" class="text-white py-2 flex items-center">
-				<svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-				Fanpage
-			</a>
-		</div>
-	</div>
-	<!-- END MENU MOBILE -->
 
     <!-- HOME HERO-->
     <div class="my_container pb-10">
@@ -237,142 +201,142 @@
     <!-- END HOME HERO -->
 
     <!-- HOT NEWS -->
-    <div class="bg-[#121214]">
+    <div class="bg_section-gray">
         <div class="my_container py-10 gap-4">
-            <div class="flex justify-between items-center pb-4">
-                <h2 class="font-semibold text-4xl text-white">Hot</h2>
-                <a href="/category_post.html" class="text-white underline decoration-1 ">View all</a>
+            <div class="head_section">
+                <h2 class="">Hot</h2>
+                <a href="/category_post.html" class="">View all</a>
             </div>
             <!--Card-list-->
             <div class="card_list">
                 <!--card item-->
-                <div class="card_container">
+                <div class="card">
                     <img src="/images/demo/News-1.png" alt="" class="w-48 h-48">
-                    <div class="card_content">
-                        <div class="card_tag bg-red-500">
+                    <div class="_content">
+                        <div class="_tag bg-red-500">
                             <a href="#">Manga</a>
                         </div>
-                        <a href="/post.html" class="card_title">One Piece confirms one of the Five Elder Stars
+                        <a href="/post.html" class="_title">One Piece confirms one of the Five Elder Stars
                             is
                             stronger than Kaido</a>
-                        <div class="card_meta text-sm">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-sm">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
                     </div>
                 </div>
                 <!--end card item-->
-                <!--card item-->
-                <div class="card_container">
+                 <!--card item-->
+                 <div class="card">
                     <img src="/images/demo/News-1.png" alt="" class="w-48 h-48">
-                    <div class="card_content">
-                        <div class="card_tag bg-green-500">
-                            <a href="#">Shoujo</a>
+                    <div class="_content">
+                        <div class="_tag bg-red-500">
+                            <a href="#">Manga</a>
                         </div>
-                        <a href="/post.html" class="card_title">One Piece confirms one of the Five Elder Stars
+                        <a href="/post.html" class="_title">One Piece confirms one of the Five Elder Stars
                             is
                             stronger than Kaido</a>
-                        <div class="card_meta text-sm">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-sm">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
                     </div>
                 </div>
                 <!--end card item-->
-                <!--card item-->
-                <div class="card_container">
+                 <!--card item-->
+                 <div class="card">
                     <img src="/images/demo/News-1.png" alt="" class="w-48 h-48">
-                    <div class="card_content">
-                        <div class="card_tag bg-pink-500">
-                            <a href="#">Romance</a>
+                    <div class="_content">
+                        <div class="_tag bg-red-500">
+                            <a href="#">Manga</a>
                         </div>
-                        <a href="/post.html" class="card_title">One Piece confirms one of the Five Elder Stars
+                        <a href="/post.html" class="_title">One Piece confirms one of the Five Elder Stars
                             is
                             stronger than Kaido</a>
-                        <div class="card_meta text-sm">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-sm">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
                     </div>
                 </div>
                 <!--end card item-->
-                <!--card item-->
-                <div class="card_container">
+                 <!--card item-->
+                 <div class="card">
                     <img src="/images/demo/News-1.png" alt="" class="w-48 h-48">
-                    <div class="card_content">
-                        <div class="card_tag bg-gray-600">
-                            <a href="/post.html">Manhua</a>
+                    <div class="_content">
+                        <div class="_tag bg-red-500">
+                            <a href="#">Manga</a>
                         </div>
-                        <a href="/post.html" class="card_title">One Piece confirms one of the Five Elder Stars
+                        <a href="/post.html" class="_title">One Piece confirms one of the Five Elder Stars
                             is
                             stronger than Kaido</a>
-                        <div class="card_meta text-sm">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-sm">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
                     </div>
                 </div>
                 <!--end card item-->
-                <!--card item-->
-                <div class="card_container">
+                 <!--card item-->
+                 <div class="card">
                     <img src="/images/demo/News-1.png" alt="" class="w-48 h-48">
-                    <div class="card_content">
-                        <div class="card_tag bg-rose-500">
-                            <a href="/post.html">Manhwa</a>
+                    <div class="_content">
+                        <div class="_tag bg-red-500">
+                            <a href="#">Manga</a>
                         </div>
-                        <a href="/post.html" class="card_title">One Piece confirms one of the Five Elder Stars
+                        <a href="/post.html" class="_title">One Piece confirms one of the Five Elder Stars
                             is
                             stronger than Kaido</a>
-                        <div class="card_meta text-sm">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-sm">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
                     </div>
                 </div>
                 <!--end card item-->
-                <!--card item-->
-                <div class="card_container">
+                 <!--card item-->
+                 <div class="card">
                     <img src="/images/demo/News-1.png" alt="" class="w-48 h-48">
-                    <div class="card_content">
-                        <div class="card_tag bg-fuchsia-500">
-                            <a href="/post.html">Webtoon</a>
+                    <div class="_content">
+                        <div class="_tag bg-red-500">
+                            <a href="#">Manga</a>
                         </div>
-                        <a href="/post.html" class="card_title">One Piece confirms one of the Five Elder Stars
+                        <a href="/post.html" class="_title">One Piece confirms one of the Five Elder Stars
                             is
                             stronger than Kaido</a>
-                        <div class="card_meta text-sm">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-sm">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
                     </div>
                 </div>
@@ -384,34 +348,34 @@
 
     <!-- NEWS -->
     <div class="my_container flex gap-4 max-sm:flex-wrap py-10">
-        <!-- NEWS CONTENT -->
-        <div class="md:w-8/12 max-sm:w-full">
-            <div class="flex justify-between items-center pb-4">
-                <h2 class="font-semibold text-4xl text-white">New</h2>
-                <a href="/category_post.html" class="text-white underline decoration-1 ">View all</a>
+        <!-- MAIN CONTENT -->
+        <div class="main_content">
+            <div class="head_section">
+                <h2 class="">New</h2>
+                <a href="/category_post.html" class="">View all</a>
             </div>
             <!-- News list-->
             <div class="list_col-1">
                 <!--News list item-->
-                <div class="News_card_container">
+                <div class="Card_news">
                     <img src="/images/demo/News-1.png" alt="" class="">
-                    <div class="card_content">
-                        <div class="card_tag">
+                    <div class="_content">
+                        <div class="_tag">
                             <a href="#" class="bg-fuchsia-500">Webtoons</a>
                         </div>
                         <a href="#" class="card_title text-2xl">One Piece confirms one of the Five Elder
                             Stars is
                             stronger than Kaido</a>
-                        <div class="card_meta text-base">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-base">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
-                        <span class="card_description">Lorem ipsum
+                        <span class="_description">Lorem ipsum
                             dolor sit amet consectetur adipisicing elit. Facere nemo, eius officiis excepturi quod est
                             consequatur. Earum corporis, placeat voluptatum odio dolorum voluptatem, ducimus magnam
                             neque inventore fugit minima quasi. </span>
@@ -419,25 +383,25 @@
                 </div>
                 <!--End news list item-->
                 <!--News list item-->
-                <div class="News_card_container">
+                <div class="Card_news">
                     <img src="/images/demo/News-1.png" alt="" class="">
-                    <div class="card_content">
-                        <div class="card_tag">
+                    <div class="_content">
+                        <div class="_tag">
                             <a href="#" class="bg-fuchsia-500">Webtoons</a>
                         </div>
                         <a href="#" class="card_title text-2xl">One Piece confirms one of the Five Elder
                             Stars is
                             stronger than Kaido</a>
-                        <div class="card_meta text-base">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-base">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
-                        <span class="card_description">Lorem ipsum
+                        <span class="_description">Lorem ipsum
                             dolor sit amet consectetur adipisicing elit. Facere nemo, eius officiis excepturi quod est
                             consequatur. Earum corporis, placeat voluptatum odio dolorum voluptatem, ducimus magnam
                             neque inventore fugit minima quasi. </span>
@@ -445,25 +409,25 @@
                 </div>
                 <!--End news list item-->
                 <!--News list item-->
-                <div class="News_card_container">
+                <div class="Card_news">
                     <img src="/images/demo/News-1.png" alt="" class="">
-                    <div class="card_content">
-                        <div class="card_tag">
+                    <div class="_content">
+                        <div class="_tag">
                             <a href="#" class="bg-fuchsia-500">Webtoons</a>
                         </div>
                         <a href="#" class="card_title text-2xl">One Piece confirms one of the Five Elder
                             Stars is
                             stronger than Kaido</a>
-                        <div class="card_meta text-base">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-base">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
-                        <span class="card_description">Lorem ipsum
+                        <span class="_description">Lorem ipsum
                             dolor sit amet consectetur adipisicing elit. Facere nemo, eius officiis excepturi quod est
                             consequatur. Earum corporis, placeat voluptatum odio dolorum voluptatem, ducimus magnam
                             neque inventore fugit minima quasi. </span>
@@ -471,25 +435,25 @@
                 </div>
                 <!--End news list item-->
                 <!--News list item-->
-                <div class="News_card_container">
+                <div class="Card_news">
                     <img src="/images/demo/News-1.png" alt="" class="">
-                    <div class="card_content">
-                        <div class="card_tag">
+                    <div class="_content">
+                        <div class="_tag">
                             <a href="#" class="bg-fuchsia-500">Webtoons</a>
                         </div>
                         <a href="#" class="card_title text-2xl">One Piece confirms one of the Five Elder
                             Stars is
                             stronger than Kaido</a>
-                        <div class="card_meta text-base">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-base">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
-                        <span class="card_description">Lorem ipsum
+                        <span class="_description">Lorem ipsum
                             dolor sit amet consectetur adipisicing elit. Facere nemo, eius officiis excepturi quod est
                             consequatur. Earum corporis, placeat voluptatum odio dolorum voluptatem, ducimus magnam
                             neque inventore fugit minima quasi. </span>
@@ -497,25 +461,25 @@
                 </div>
                 <!--End news list item-->
                 <!--News list item-->
-                <div class="News_card_container">
+                <div class="Card_news">
                     <img src="/images/demo/News-1.png" alt="" class="">
-                    <div class="card_content">
-                        <div class="card_tag">
+                    <div class="_content">
+                        <div class="_tag">
                             <a href="#" class="bg-fuchsia-500">Webtoons</a>
                         </div>
                         <a href="#" class="card_title text-2xl">One Piece confirms one of the Five Elder
                             Stars is
                             stronger than Kaido</a>
-                        <div class="card_meta text-base">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-base">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
-                        <span class="card_description">Lorem ipsum
+                        <span class="_description">Lorem ipsum
                             dolor sit amet consectetur adipisicing elit. Facere nemo, eius officiis excepturi quod est
                             consequatur. Earum corporis, placeat voluptatum odio dolorum voluptatem, ducimus magnam
                             neque inventore fugit minima quasi. </span>
@@ -523,25 +487,25 @@
                 </div>
                 <!--End news list item-->
                 <!--News list item-->
-                <div class="News_card_container">
+                <div class="Card_news">
                     <img src="/images/demo/News-1.png" alt="" class="">
-                    <div class="card_content">
-                        <div class="card_tag">
+                    <div class="_content">
+                        <div class="_tag">
                             <a href="#" class="bg-fuchsia-500">Webtoons</a>
                         </div>
                         <a href="#" class="card_title text-2xl">One Piece confirms one of the Five Elder
                             Stars is
                             stronger than Kaido</a>
-                        <div class="card_meta text-base">
-                            <span class="card_meta-item">By <a href="#">Admin</a></span>
+                        <div class="_meta text-base">
+                            <span class="-item">By <a href="#">Admin</a></span>
                             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="M5 12h14" />
                             </svg>
-                            <span class="card_meta-item">400 Views</span>
+                            <span class="-item">400 Views</span>
                         </div>
-                        <span class="card_description">Lorem ipsum
+                        <span class="_description">Lorem ipsum
                             dolor sit amet consectetur adipisicing elit. Facere nemo, eius officiis excepturi quod est
                             consequatur. Earum corporis, placeat voluptatum odio dolorum voluptatem, ducimus magnam
                             neque inventore fugit minima quasi. </span>
@@ -551,8 +515,8 @@
             </div>
         </div>
 
-        <!-- RIGHT SECTION -->
-        <div class="w-4/12 max-sm:w-full py-4">
+        <!-- RIGHT CONTENT -->
+        <div class="right_content">
             <!-- CATEGORIES SLIDE-->
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
@@ -565,18 +529,18 @@
                     });
                 });
             </script>
-            <div class="w-full flex items-center justify-between pb-4 border-b-2 border-white">
-                <h2 class="font-semibold text-2xl text-white">Categories</h2>
-                <div class="grid grid-cols-2 gap-2">
-                    <button id="swiper-prev" class="flex items-center justify-center bg-gray-700 p-2">
-                        <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true"
+            <div class="head_section-sm">
+                <h2 class="">Categories</h2>
+                <div class="swp_btn">
+                    <button id="swiper-prev" class="">
+                        <svg class="" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="m15 19-7-7 7-7" />
                         </svg>
                     </button>
-                    <button id="swiper-next" class="flex items-center justify-center bg-gray-700 p-2">
-                        <svg class="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true"
+                    <button id="swiper-next" class="">
+                        <svg class="" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="m9 5 7 7-7 7" />
@@ -585,7 +549,7 @@
                 </div>
             </div>
             <!--Category swiper-->
-            <div class="category_swiper-container">
+            <div class="category_swiper">
                 <div id="categorySwiper" class="swiper w-full">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -679,30 +643,30 @@
             <!-- RECENT -->
             <div x-data="{openRecent: true, openPopular: false, openTrendy: false}" class="">
                 <div class="w-full pb-4">
-                    <div class="grid grid-cols-3 divide-x border-2 border-gray-300 max-md:text-sm font-semibold">
+                    <div class="selector">
                         <button x-on:click="openRecent = true, openPopular = false, openTrendy = false"
-                            :class="openRecent ? 'bg-red-500 text-white' : ''"
-                            class="p-4 md:px-1 hover:bg-red-500">Recent</button>
+                            :class="openRecent ? 'primary text-white' : ''"
+                            class="">Recent</button>
                         <button x-on:click="openRecent = false, openPopular = true, openTrendy = false"
                             :class="openPopular ? 'bg-red-500 text-white' : ''"
-                            class="p-4 md:px-1 hover:bg-red-500">Popular</button>
+                            class="">Popular</button>
                         <button x-on:click="openRecent = false, openPopular = false, openTrendy = true"
                             :class="openTrendy ? 'bg-red-500 text-white' : ''"
-                            class="p-4 md:px-1 hover:bg-red-500">Trendy</button>
+                            class="">Trendy</button>
                     </div>
                 </div>
                 <div x-show="openRecent" class="list_col-1">
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-red-500">Manga</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -715,16 +679,16 @@
                     </div>
                     <!--end card items-->
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-red-500">Manga</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -737,16 +701,16 @@
                     </div>
                     <!--end card items-->
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-red-500">Manga</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -759,16 +723,16 @@
                     </div>
                     <!--end card items-->
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-red-500">Manga</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -783,16 +747,16 @@
                 </div>
                 <div x-show="openPopular" x-cloak class="list_col-1">
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-rose-500">Manhwa</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -805,16 +769,16 @@
                     </div>
                     <!--end card items-->
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-rose-500">Manhwa</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -827,16 +791,16 @@
                     </div>
                     <!--end card items-->
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-rose-500">Manhwa</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -849,16 +813,16 @@
                     </div>
                     <!--end card items-->
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-rose-500">Manhwa</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -873,16 +837,16 @@
                 </div>
                 <div x-show="openTrendy" x-cloak class="list_col-1">
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-gray-600">Manhua</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -895,16 +859,16 @@
                     </div>
                     <!--end card items-->
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-gray-600">Manhua</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -917,16 +881,16 @@
                     </div>
                     <!--end card items-->
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-gray-600">Manhua</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -939,16 +903,16 @@
                     </div>
                     <!--end card items-->
                     <!--card items-->
-                    <div class="card_container max-md:flex-wrap">
+                    <div class="card">
                         <img src="/images/demo/News-1.png" alt="" class="w-40 h-40 object-cover">
-                        <div class="card_content">
-                            <div class="card_tag">
+                        <div class="_content">
+                            <div class="_tag">
                                 <a href="#" class="bg-gray-600">Manhua</a>
                             </div>
-                            <a href="#" class="card_title">One Piece confirms one of the Five Elder Stars
+                            <a href="#" class="_title">One Piece confirms one of the Five Elder Stars
                                 is
                                 stronger than Kaido</a>
-                            <div class="card_meta">
+                            <div class="_meta">
                                 <span>By <a href="#">Admin</a></span>
                                 <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -965,9 +929,9 @@
 
             <!-- CATEGORIES TAG -->
             <div class="py-4">
-                <div class="w-full flex items-center justify-between pb-4 border-b-2 border-white">
-                    <h2 class="font-semibold text-2xl text-white">Tag</h2>
-                    <a href="#" class="text-white hover:underline underline-offset-2">View all</a>
+                <div class="head_section-sm">
+                    <h2 class="">Tag</h2>
+                    <a href="#" class="">View all</a>
                 </div>
                 <div class="tag_container">
                     <a href="#">Anime</a>
@@ -982,22 +946,22 @@
             </div>
 
         </div>
-        <!-- END RIGHT SECTION -->
+        <!-- END RIGHT CONTENT -->
     </div>
     <!-- END NEWS -->
 
     <!-- RELATED POSTS -->
-    <div class="bg-[#121214] p-10 max-sm:p-0">
+    <div class="bg_section-gray p-10 max-sm:p-0">
         <div class="my_container">
-            <div class="flex justify-between items-center pb-4">
-                <h2 class="font-semibold text-4xl text-white">Most Views</h2>
-                <a href="#" class="text-white underline decoration-1 ">View all</a>
+            <div class="head_section">
+                <h2 class="">Most Views</h2>
+                <a href="#" class="">View all</a>
             </div>
-            <div class="Most_views-card_container">
-                <a href="/post.html" class="item">
+            <div class="Most_views">
+                <a href="/post.html" class="-item">
                     <img src="/images/category/Manga-category.png" alt="" class="">
-                    <div class="content">
-                        <div class="content-text">
+                    <div class="-content">
+                        <div class="-text">
                             <p class="">Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
                                 Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
@@ -1006,10 +970,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="/post.html" class="item">
+                <a href="/post.html" class="-item">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
-                    <div class="content">
-                        <div class="content-text">
+                    <div class="-content">
+                        <div class="-text">
                             <p class="">Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
                                 Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
@@ -1018,10 +982,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="/post.html" class="item">
+                <a href="/post.html" class="-item">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
-                    <div class="content">
-                        <div class="content-text">
+                    <div class="-content">
+                        <div class="-text">
                             <p class="">Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
                                 Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
@@ -1030,10 +994,10 @@
                         </div>
                     </div>
                 </a>
-                <a href="/post.html" class="item">
+                <a href="/post.html" class="-item">
                     <img src="/images/category/Murim-category.png" alt="" class="">
-                    <div class="content">
-                        <div class="content-text">
+                    <div class="-content">
+                        <div class="-text">
                             <p class="">Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Tempore cupiditate asperiores porro magni nobis quos consequuntur hic?
                                 Animi pariatur similique sed! Asperiores perspiciatis veritatis ducimus numquam
@@ -1071,7 +1035,45 @@
     </footer>
     <!-- END FOOTER -->
 
-    	<!-- SEARCH MODAL -->
+    <!-- MENU MOBILE -->
+	<div id="mobile-menu" class="navbar_mobile">
+		<div class="overlay" data-toggle="mobile-menu"></div>
+		<button class="close" data-toggle="mobile-menu">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="#f0f0f0"/></svg>
+		</button>
+
+		<div id="mobile-menu-body" class="navbar_mobile_menu" x-data="{openCateDropdown: false}">
+			<div class="pb-6">
+				<a class="inline-block py-4" href="/">
+					<img src="/images/logo.png" title="logo" alt="logo" width="110" height="39">
+				</a>
+			</div>
+
+			<a href="/" title="Home" aria-label="Home" class="nav_item">
+				<svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+				Home
+			</a>
+			<a href="/category.html" title="Categories" aria-label="Categories" class="text-white py-2 flex items-center">
+				<svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+				Categories
+			</a>
+            <a href="/category_post.html" title="Group" aria-label="Group" class="text-white py-2 flex items-center">
+				<svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+				Post
+			</a>
+			<a href="/" title="Group" aria-label="Group" class="text-white py-2 flex items-center">
+				<svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+				Group
+			</a>
+			<a href="/" title="Fanpage" aria-label="Fanpage" class="text-white py-2 flex items-center">
+				<svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12H12H19" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+				Fanpage
+			</a>
+		</div>
+	</div>
+	<!-- END MENU MOBILE -->
+
+    <!-- SEARCH MODAL -->
 	<div id="search-modal" class="modal">
 		<div class="overlay modal_toggle" data-modal="search-modal"></div>
 

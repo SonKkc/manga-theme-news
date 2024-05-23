@@ -1,5 +1,30 @@
-.category_swiper-container{
+.head_section-sm{
+    @apply w-full flex items-center justify-between pb-4 border-b-2 border-white;
+
+    h2{
+        @apply font-semibold text-2xl text-white;
+    }
+
+    a{
+        @apply text-white underline underline-offset-2;
+    }
+}
+
+.swp_btn{
+    @apply grid grid-cols-2 gap-2;
+
+    button{
+        @apply flex items-center justify-center bg-gray-700 p-2;
+
+        svg{
+            @apply w-5 h-5 text-white;
+        }
+    }
+}
+
+.category_swiper{
     @apply grid grid-cols-1 grid-flow-row gap-4 py-4;
+
 
     & .swiper-block{
         @apply grid grid-cols-2 grid-rows-2 gap-4;
@@ -8,17 +33,29 @@
     & .swiper-img{
         @apply w-full h-[167px] relative;
 
-        & img{
+        img{
             @apply w-full h-full object-cover;
         }
 
-        & div{
+        div{
             @apply absolute left-0 top-0 w-full h-full bg-black bg-opacity-50 hover:bg-opacity-25 flex items-center justify-center;
         }
 
-        & span{
+        span{
             @apply text-white font-semibold text-2xl;
         }
+    }
+}
+
+.selector{
+    @apply grid grid-cols-3 divide-x border-2 border-gray-300 max-md:text-sm font-semibold;
+
+    button{
+        @apply p-4 md:px-1;
+    }
+    
+    button:hover{
+        @apply primary;
     }
 }
 

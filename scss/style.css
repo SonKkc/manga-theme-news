@@ -54,6 +54,10 @@ input {
 }
 
 /* Navbar */
+.navbar {
+  @apply bg_section-gray relative;
+}
+
 .navbar_logo {
   @apply w-1/2 lg:w-1/5;
 }
@@ -117,17 +121,25 @@ input {
 .category_grid {
   @apply my_container grid grid-cols-3 grid-flow-row gap-4 px-4 py-5 text-white md:px-6;
 }
-.category_grid .category_list {
+.category_grid ._list {
   @apply w-full relative;
 }
-.category_grid .category_list img {
+.category_grid ._list img {
   @apply h-24 w-full object-cover rounded-lg;
 }
-.category_grid .category_list div {
+.category_grid ._list div {
   @apply absolute left-0 top-0 w-full h-full bg-black bg-opacity-50 hover:bg-opacity-25 flex items-center justify-center;
 }
-.category_grid .category_list span {
+.category_grid ._list span {
   @apply text-white font-semibold text-2xl;
+}
+
+.main_content {
+  @apply md:w-8/12 max-sm:w-full;
+}
+
+.right_content {
+  @apply w-4/12 max-sm:w-full;
 }
 
 .hero_left {
@@ -166,71 +178,100 @@ input {
   @apply -translate-y-3 transition duration-300 ease-in-out;
 }
 
-.card_container {
+.head_section {
+  @apply flex justify-between items-center pb-4;
+}
+.head_section h2 {
+  @apply font-semibold text-4xl text-white;
+}
+.head_section a {
+  @apply text-white underline underline-offset-2;
+}
+
+.card {
   @apply w-full flex gap-4 max-[1023px]:flex-wrap max-sm:flex-wrap;
 }
-.card_container img {
+.card img {
   @apply object-cover max-sm:w-full max-[1023px]:w-full;
 }
-
-.card_content {
+.card ._content {
   @apply flex flex-col gap-4;
 }
-
-.card_tag {
+.card ._content ._tag {
   @apply flex items-center;
 }
-.card_tag a {
+.card ._content ._tag a {
   @apply py-1 px-2 border border-transparent text-white font-semibold inline;
 }
-
-.card_title {
+.card ._content ._title {
   @apply text-white font-semibold hover:underline underline-offset-2;
 }
-
-.card_meta {
+.card ._content ._meta {
   @apply flex items-center gap-4;
 }
-.card_meta .card_meta-item {
+.card ._content ._meta .-item {
   @apply text-gray-500;
 }
-.card_meta span {
+.card ._content ._meta span {
   @apply text-gray-500;
 }
-.card_meta span a {
+.card ._content ._meta span a {
   @apply hover:underline underline-offset-2;
 }
 
-.News_card_container {
+.Card_news {
   @apply w-full flex gap-4 overflow-hidden  max-sm:flex-wrap;
 }
-.News_card_container img {
+.Card_news img {
   @apply lg:w-56 lg:h-64 object-cover md:w-44  max-sm:w-full max-sm:h-48;
 }
-
-.card_description {
+.Card_news ._content {
+  @apply flex flex-col gap-4;
+}
+.Card_news ._content ._tag {
+  @apply flex items-center;
+}
+.Card_news ._content ._tag a {
+  @apply py-1 px-2 border border-transparent text-white font-semibold inline;
+}
+.Card_news ._content ._title {
+  @apply text-white font-semibold hover:underline underline-offset-2;
+}
+.Card_news ._content ._meta {
+  @apply flex items-center gap-4;
+}
+.Card_news ._content ._meta .-item {
+  @apply text-gray-500;
+}
+.Card_news ._content ._meta span {
+  @apply text-gray-500;
+}
+.Card_news ._content ._meta span a {
+  @apply hover:underline underline-offset-2;
+}
+.Card_news ._description {
   @apply text-gray-400 font-semibold text-ellipsis overflow-hidden max-h-[75px];
 }
 
-.Most_views-card_container {
+.Most_views {
   @apply w-full flex items-center justify-between max-sm:justify-center flex-wrap max-sm:gap-4;
 }
-.Most_views-card_container .item {
+.Most_views .-item {
   @apply relative;
 }
-.Most_views-card_container .item img {
+.Most_views .-item img {
   @apply w-[280px] h-80 object-cover max-[1023px]:w-44 max-sm:w-screen md:h-44;
 }
-.Most_views-card_container .item .content {
+.Most_views .-item .-content {
   @apply absolute w-full h-2/3 bottom-0 left-0 right-0 bg-gradient-to-t from-gray-700 overflow-hidden;
 }
-.Most_views-card_container .item .content .content-text {
+.Most_views .-item .-content .-text {
   @apply w-full px-2 bottom-0 absolute h-1/3;
 }
-.Most_views-card_container .item .content .content-text p {
+.Most_views .-item .-content .-text p {
   @apply text-center truncate;
 }
-.Most_views-card_container .item:hover .content .content-text {
+.Most_views .-item:hover .-content .-text {
   @apply -translate-y-3 transition duration-300 ease-in-out;
 }
 
@@ -246,23 +287,53 @@ input {
   @apply grid grid-cols-5 grid-flow-row gap-4 max-sm:grid-cols-1 max-[1023px]:grid-cols-3;
 }
 
-.category_swiper-container {
+.head_section-sm {
+  @apply w-full flex items-center justify-between pb-4 border-b-2 border-white;
+}
+.head_section-sm h2 {
+  @apply font-semibold text-2xl text-white;
+}
+.head_section-sm a {
+  @apply text-white underline underline-offset-2;
+}
+
+.swp_btn {
+  @apply grid grid-cols-2 gap-2;
+}
+.swp_btn button {
+  @apply flex items-center justify-center bg-gray-700 p-2;
+}
+.swp_btn button svg {
+  @apply w-5 h-5 text-white;
+}
+
+.category_swiper {
   @apply grid grid-cols-1 grid-flow-row gap-4 py-4;
 }
-.category_swiper-container .swiper-block {
+.category_swiper .swiper-block {
   @apply grid grid-cols-2 grid-rows-2 gap-4;
 }
-.category_swiper-container .swiper-img {
+.category_swiper .swiper-img {
   @apply w-full h-[167px] relative;
 }
-.category_swiper-container .swiper-img img {
+.category_swiper .swiper-img img {
   @apply w-full h-full object-cover;
 }
-.category_swiper-container .swiper-img div {
+.category_swiper .swiper-img div {
   @apply absolute left-0 top-0 w-full h-full bg-black bg-opacity-50 hover:bg-opacity-25 flex items-center justify-center;
 }
-.category_swiper-container .swiper-img span {
+.category_swiper .swiper-img span {
   @apply text-white font-semibold text-2xl;
+}
+
+.selector {
+  @apply grid grid-cols-3 divide-x border-2 border-gray-300 max-md:text-sm font-semibold;
+}
+.selector button {
+  @apply p-4 md:px-1;
+}
+.selector button:hover {
+  @apply primary;
 }
 
 .tag_container {
@@ -302,6 +373,50 @@ input {
   @apply w-10 h-10 text-sm text-gray-400 hover:text-amber-500;
 }
 
+.primary {
+  @apply bg-red-500;
+}
+
+.secondary {
+  @apply bg-blue-500;
+}
+
+.tertiary {
+  @apply bg-green-500;
+}
+
+.quaternary {
+  @apply bg-yellow-500;
+}
+
+.quinary {
+  @apply bg-indigo-500;
+}
+
+.senary {
+  @apply bg-purple-500;
+}
+
+.septenary {
+  @apply bg-pink-500;
+}
+
+.octonary {
+  @apply bg-gray-500;
+}
+
+.nonary {
+  @apply bg-black;
+}
+
+.denary {
+  @apply bg-white;
+}
+
+.bg_section-gray {
+  @apply bg-[#121213];
+}
+
 .post_hero {
   @apply w-full h-[700px] flex flex-col justify-end overflow-hidden relative bg-no-repeat bg-cover py-20;
 }
@@ -316,10 +431,13 @@ input {
 .post_hero-content .date_block {
   @apply lg:h-52 lg:w-52 md:w-44 md:h-44 max-sm:w-40 max-sm:h-40 bg-red-500 flex items-center justify-center;
 }
-.post_hero-content .date_block span:first-child {
+.post_hero-content .date_block .-center {
+  @apply flex flex-col items-center;
+}
+.post_hero-content .date_block .-center span:first-child {
   @apply uppercase text-2xl font-semibold;
 }
-.post_hero-content .date_block span:last-child {
+.post_hero-content .date_block .-center span:last-child {
   @apply uppercase text-4xl font-bold;
 }
 
@@ -344,60 +462,94 @@ input {
   @apply w-full h-full object-cover pb-4;
 }
 
-.share_container {
+.share {
   @apply flex flex-wrap items-center gap-4;
 }
-.share_container .share_text {
+.share .-text {
   @apply text-white text-2xl font-semibold;
 }
-.share_container .social_block {
+.share .social_block {
   @apply py-2 px-6 flex items-center gap-4 justify-center;
 }
-.share_container .social_block span {
+.share .social_block span {
   @apply text-white font-semibold;
 }
 
-.author_container {
+.author {
   @apply py-10 flex items-center flex-wrap gap-4 border-b border-gray-300;
 }
-.author_container img {
+.author img {
   @apply w-24 h-24 object-cover rounded-full;
 }
-.author_container .author_detail {
+.author ._detail {
   @apply flex flex-col gap-2;
 }
-.author_container .author_detail span:first-child {
+.author ._detail span:first-child {
   @apply text-white hover:text-red-500 font-semibold text-xl;
 }
-.author_container .author_detail span:last-child {
+.author ._detail span:last-child {
   @apply text-gray-400;
 }
 
-.post_pagination-container {
-  @apply flex items-center max-sm:flex-wrap justify-between py-10 gap-4;
+.comment {
+  @apply flex flex-col gap-4 py-10;
 }
-.post_pagination-container .pagination_btn {
-  @apply flex flex-col gap-4 bg-gray-600 md:w-1/2 p-7 max-h-40 overflow-hidden max-sm:w-full;
+.comment ._head-title {
+  @apply text-3xl text-white font-semibold;
 }
-.post_pagination-container .pagination_btn .btn-icon {
-  @apply flex items-center justify-center p-2;
+.comment .-note {
+  @apply text-gray-400;
 }
-.post_pagination-container .pagination_btn span {
-  @apply text-white font-semibold;
-}
-.post_pagination-container .pagination_btn p {
-  @apply text-white text-xl font-semibold text-ellipsis overflow-hidden text-left;
-}
-.post_pagination-container .pagination_btn:hover {
-  @apply bg-gray-700;
-}
-.post_pagination-container .pagination_btn:hover .btn-icon {
-  @apply bg-red-500;
-}
-.post_pagination-container .pagination_btn:hover span {
+.comment .-redmark {
   @apply text-red-500;
 }
-.post_pagination-container .pagination_btn:hover p {
+.comment .-field {
+  @apply flex flex-col gap-4;
+}
+.comment .-field label {
+  @apply text-white flex;
+}
+.comment .-field input {
+  @apply py-2 px-4 bg-transparent text-white border border-gray-500 rounded-[0px];
+}
+.comment .-field textarea {
+  @apply py-2 px-4 bg-transparent text-white border border-gray-500 rounded-[0px];
+}
+.comment ._submit .-btn {
+  @apply py-4 px-4 primary text-white font-semibold hover:bg-red-600;
+}
+
+.post_pagination {
+  @apply flex items-center max-sm:flex-wrap justify-between py-10 gap-4;
+}
+.post_pagination ._btn {
+  @apply flex flex-col gap-4 bg-gray-600 md:w-1/2 p-7 max-h-40 overflow-hidden max-sm:w-full;
+}
+.post_pagination ._btn div {
+  @apply flex items-center gap-4;
+}
+.post_pagination ._btn div .-icon {
+  @apply flex items-center justify-center p-2;
+}
+.post_pagination ._btn div .-icon svg {
+  @apply w-5 h-5 text-white;
+}
+.post_pagination ._btn div span {
+  @apply text-white font-semibold;
+}
+.post_pagination ._btn p {
+  @apply text-white text-xl font-semibold text-ellipsis overflow-hidden;
+}
+.post_pagination ._btn:hover {
+  @apply bg-gray-700;
+}
+.post_pagination ._btn:hover .-icon {
+  @apply bg-red-500;
+}
+.post_pagination ._btn:hover span {
+  @apply text-red-500;
+}
+.post_pagination ._btn:hover p {
   @apply underline underline-offset-2;
 }
 

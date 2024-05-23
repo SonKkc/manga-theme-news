@@ -1,3 +1,12 @@
+.main_content{
+    @apply md:w-8/12 max-sm:w-full;
+}
+
+.right_content{ 
+    @apply w-4/12 max-sm:w-full;
+}
+
+
 .hero_left {
     @apply w-7/12 w-full max-sm:w-full;
 }
@@ -36,5 +45,17 @@
 .home_hero:hover {
     & .hero_title .hero_title-text{
         @apply -translate-y-3 transition duration-300 ease-in-out;
+    }
+}
+
+.head_section {
+    @apply flex justify-between items-center pb-4;
+
+    h2{
+        @apply font-semibold text-4xl text-white;
+    }
+
+    a{
+        @apply text-white underline underline-offset-2;
     }
 }

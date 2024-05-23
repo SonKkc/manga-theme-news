@@ -1,4 +1,8 @@
 /* Navbar */
+.navbar{
+  @apply bg_section-gray relative;
+}
+
 .navbar_logo {
   @apply w-1/2 lg:w-1/5
 }
@@ -51,7 +55,7 @@
 .category_grid {
   @apply my_container grid grid-cols-3 grid-flow-row gap-4 px-4 py-5 text-white md:px-6;
 
-  & .category_list{
+  & ._list{
     @apply w-full relative;
 
     & img{
