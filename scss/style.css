@@ -421,28 +421,72 @@ input {
   @apply bg-[#121213];
 }
 
+.breadcrum {
+  @apply my_container;
+}
+.breadcrum .-list {
+  @apply py-4 gap-1 text-gray-400 flex items-center;
+}
+.breadcrum .-list .-current {
+  @apply max-w-[200px] overflow-hidden;
+}
+.breadcrum .-list .-current p {
+  @apply text-white font-semibold truncate;
+}
+.breadcrum .-list a:hover {
+  @apply text-white hover:underline underline-offset-2;
+}
+
 .post_hero {
   @apply w-full h-[700px] flex flex-col justify-end overflow-hidden relative bg-no-repeat bg-cover py-20;
 }
-
-.post_hero-overlay {
+.post_hero .-overlay {
   @apply absolute bottom-0 left-0 right-0 bg-gray-900/50 w-full h-full;
 }
-
-.post_hero-content {
+.post_hero .-content {
   @apply grid lg:grid-cols-5 max-sm:grid-cols-1 md:grid-cols-1 gap-4;
 }
-.post_hero-content .date_block {
+.post_hero .-content .date_block {
   @apply lg:h-52 lg:w-52 md:w-44 md:h-44 max-sm:w-40 max-sm:h-40 bg-red-500 flex items-center justify-center;
 }
-.post_hero-content .date_block .-center {
+.post_hero .-content .date_block .-center {
   @apply flex flex-col items-center;
 }
-.post_hero-content .date_block .-center span:first-child {
+.post_hero .-content .date_block .-center span:first-child {
   @apply uppercase text-2xl font-semibold;
 }
-.post_hero-content .date_block .-center span:last-child {
+.post_hero .-content .date_block .-center span:last-child {
   @apply uppercase text-4xl font-bold;
+}
+.post_hero .-content ._wrapper {
+  @apply flex flex-col gap-4 col-span-4;
+}
+.post_hero .-content ._wrapper .-tag {
+  @apply flex items-center;
+}
+.post_hero .-content ._wrapper .-tag a {
+  @apply py-1 px-2 border border-transparent text-white font-semibold inline;
+}
+.post_hero .-content ._wrapper .-title {
+  @apply text-4xl text-white font-semibold hover:underline underline-offset-2;
+}
+.post_hero .-content ._wrapper .-meta {
+  @apply flex items-center gap-4 flex-wrap;
+}
+.post_hero .-content ._wrapper .-meta img {
+  @apply w-14 h-14 object-cover rounded-full;
+}
+.post_hero .-content ._wrapper .-meta .-author {
+  @apply text-white hover:underline underline-offset-2 cursor-pointer;
+}
+.post_hero .-content ._wrapper .-meta span {
+  @apply text-white;
+}
+.post_hero .-content ._wrapper h1 {
+  @apply text-white font-semibold text-4xl;
+}
+.post_hero .-content ._wrapper span {
+  @apply text-gray-400;
 }
 
 .post_container {

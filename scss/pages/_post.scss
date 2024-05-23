@@ -1,32 +1,75 @@
 // post hero
 .post_hero {
     @apply w-full h-[700px] flex flex-col justify-end overflow-hidden relative bg-no-repeat bg-cover py-20;
-}
-
-.post_hero-overlay {
-    @apply absolute bottom-0 left-0 right-0 bg-gray-900/50 w-full h-full;
-}
-
-.post_hero-content {
-    @apply grid lg:grid-cols-5 max-sm:grid-cols-1 md:grid-cols-1 gap-4;
-
-    & .date_block{
-       @apply lg:h-52 lg:w-52 md:w-44 md:h-44 max-sm:w-40 max-sm:h-40 bg-red-500 flex items-center justify-center;
-        
-       & .-center{
-            @apply flex flex-col items-center;
-
-           span:first-child{
-              @apply uppercase text-2xl font-semibold;
-           }
-
-            span:last-child{
-                 @apply uppercase text-4xl font-bold;
-            }
-       }
-    }
     
+    .-overlay {
+        @apply absolute bottom-0 left-0 right-0 bg-gray-900/50 w-full h-full;
+    }
+
+    .-content {
+        @apply grid lg:grid-cols-5 max-sm:grid-cols-1 md:grid-cols-1 gap-4;
+    
+        & .date_block{
+           @apply lg:h-52 lg:w-52 md:w-44 md:h-44 max-sm:w-40 max-sm:h-40 bg-red-500 flex items-center justify-center;
+            
+           & .-center{
+                @apply flex flex-col items-center;
+    
+               span:first-child{
+                  @apply uppercase text-2xl font-semibold;
+               }
+    
+                span:last-child{
+                     @apply uppercase text-4xl font-bold;
+                }
+           }
+        }
+
+        & ._wrapper{
+            @apply flex flex-col gap-4 col-span-4;
+
+            & .-tag{
+                @apply flex items-center;
+        
+                a{
+                    @apply py-1 px-2 border border-transparent text-white font-semibold inline;
+                }
+            }
+
+            & .-title{
+                @apply text-4xl text-white font-semibold hover:underline underline-offset-2;
+            }
+
+            & .-meta{
+                @apply flex items-center gap-4 flex-wrap;
+
+                img {
+                    @apply w-14 h-14 object-cover rounded-full;
+                }
+
+                & .-author{
+                    @apply text-white hover:underline underline-offset-2 cursor-pointer;
+                }
+        
+                span{
+                    @apply text-white;
+        
+                }
+            }
+    
+            h1{
+                @apply text-white font-semibold text-4xl;
+            }
+    
+            span{
+                @apply text-gray-400;
+            }
+        }
+        
+    }
 }
+
+
 
 .post_container{
     @apply my_container flex gap-4 max-sm:flex-wrap;

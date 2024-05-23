@@ -1,0 +1,20 @@
+.breadcrum{
+    @apply my_container;
+
+    & .-list{
+        @apply py-4 gap-1 text-gray-400 flex items-center;
+
+        & .-current{
+            @apply max-w-[200px] overflow-hidden;
+
+            p {
+                @apply text-white font-semibold truncate;
+            }   
+        }
+
+        a:hover{
+            @apply text-white hover:underline underline-offset-2;
+        }
+
+    }
+}
