@@ -12,8 +12,8 @@
 
 <body>
     <!-- NAVBAR -->
-    <header id="navbar" class="navbar bg-[#121213] relative" x-data="{categoryDropdown: false}">
-        <div class="my_container flex_between">
+    <header id="navbar" class="navbar z-[30]" x-data="{categoryDropdown: false}">
+        <div class="my_container flex_between z-[30]">
             <div class="navbar_logo">
                 <a class="inline-block py-5" href="/">
                     <img src="/images/logo.png" title="logo" alt="logo" width="110" height="39">
@@ -24,13 +24,17 @@
                 <a href="/" title="Home" aria-label="Home" class="navbar_menu_item">
                     Home
                 </a>
-                <div title="Ranking" x-on:click="categoryDropdown = !categoryDropdown" aria-label="Ranking" class="navbar_menu_item flex items-center gap-2 cursor-pointer">
+                <div title="Ranking" x-on:click="categoryDropdown = !categoryDropdown"
+                    @mouseover="categoryDropdown = true" aria-label="Ranking"
+                    class="navbar_menu_item flex items-center gap-2 cursor-pointer">
                     Category
-                    <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                      </svg>
+                    <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 9-7 7-7-7" />
+                    </svg>
                 </div>
-                <a href="/manga-list.html" title="Manga List" aria-label="Manga List" class="navbar_menu_item">
+                <a href="/category_post.html" title="Manga List" aria-label="Manga List" class="navbar_menu_item">
                     Post
                 </a>
                 <a href="#" title="Group" aria-label="Group" class="navbar_menu_item">
@@ -58,10 +62,12 @@
                 </button>
             </div>
         </div>
-        <div x-show="categoryDropdown" x-cloak id="mega-menu-full-dropdown" x-on:click.outside="categoryDropdown = false" class="category_dropdown">
+        <div x-show="categoryDropdown" x-cloak id="mega-menu-full-dropdown"
+            x-on:click.outside="categoryDropdown = false" @mouseleave="categoryDropdown = false"
+            class="category_dropdown">
             <div class="category_grid">
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manga</span>
@@ -69,7 +75,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhwa</span>
@@ -77,7 +83,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhua</span>
@@ -85,7 +91,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <div class="">
                         <span class="">Murim</span>
@@ -93,7 +99,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manga</span>
@@ -101,7 +107,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhwa</span>
@@ -109,7 +115,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhua</span>
@@ -117,15 +123,15 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <div class="">
                         <span class="">Murim</span>
                     </div>
                 </a>
                 <!--End categorry list-->
-                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <!--Categorry list-->
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manga</span>
@@ -133,7 +139,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhwa</span>
@@ -141,7 +147,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <div class="">
                         <span class="">Manhua</span>
@@ -149,7 +155,7 @@
                 </a>
                 <!--End categorry list-->
                 <!--Categorry list-->
-                <a href="/category.html" class="category_list">
+                <a href="/category.html" class="_list">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <div class="">
                         <span class="">Murim</span>
@@ -174,10 +180,10 @@
     <!-- END BREADCRUM -->
 
     <!-- MAIN -->
-    <div class="bg-[#121213]">
+    <div class="bg_section-gray">
         <div class="my_container py-10">
-            <div class="text-white text-4xl font-semibold">
-                Category
+            <div class="head_section">
+                <h2 class="">Category</h2>
             </div>
         </div>
     </div>
@@ -185,13 +191,12 @@
     <div class="my_container flex gap-4 max-sm:flex-wrap py-10">
         <!-- NEWS CONTENT -->
         <div class="w-full">
-            <div class="w-full pb-4 grid grid-cols-2 gap-4">
-                <div class="text-gray-400">Showing 1-9 of 17 results</div>
+            <div class="list_col-2 pb-4 sort_bar">
+                <span class="text-gray-400">Showing 1-9 of 17 results</span>
                 <!--sort-->
-                <div class="flex justify-end">
+                <div class="-block">
                     <div class="p-4 border border-gray-500">
-                        <select name="sort" id="sort-category"
-                            class="text-gray-400 bg-transparent ">
+                        <select name="sort" id="sort-category" class="text-gray-400 bg-transparent ">
                             <option value="" selected>Sort by</option>
                             <option value="">Newest</option>
                             <option value="">Oldest</option>
@@ -202,123 +207,123 @@
             </div>
 
             <!-- CATEGORY LIST -->
-            <div class="list_col-5">
+            <div class="list_col-5 category_list">
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <span class="">Manga</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <span class="">Manhwa</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <span class="">Manhua</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <span class="">Murim</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <span class="">Manga</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <span class="">Manhwa</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <span class="">Manhua</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <span class="">Murim</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <span class="">Manga</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <span class="">Manhwa</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <span class="">Manhua</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <span class="">Murim</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <span class="">Manga</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <span class="">Manhwa</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <span class="">Manhua</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <span class="">Murim</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manga-category.png" alt="" class="">
                     <span class="">Manga</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manhwa-category.png" alt="" class="">
                     <span class="">Manhwa</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Manhua-category.png" alt="" class="">
                     <span class="">Manhua</span>
                 </a>
                 <!--end category item-->
                 <!--category Iteem-->
-                <a href="/category_post.html" class="category_list-item">
+                <a href="/category_post.html" class="-item">
                     <img src="/images/category/Murim-category.png" alt="" class="">
                     <span class="">Murim</span>
                 </a>
@@ -328,23 +333,27 @@
             <!-- PAGINATION -->
             <ul class="pagination pt-4">
                 <li><a href="#" title="Previous" aria-label="Previous">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
-                      </svg>                      
-                </a></li>
-				<li><a href="#" class="active" title="1" aria-label="1">1</a></li>
-				<li><a href="#" title="2" aria-label="2">2</a></li>
-				<li><a href="#" title="3" aria-label="3">3</a></li>
-				<li class="w-10 h-10 flex_center">...</li>
-				<li><a href="#" title="7" aria-label="6">6</a></li>
-				<li><a href="#" title="8" aria-label="7">7</a></li>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m15 19-7-7 7-7" />
+                        </svg>
+                    </a></li>
+                <li><a href="#" class="active" title="1" aria-label="1">1</a></li>
+                <li><a href="#" title="2" aria-label="2">2</a></li>
+                <li><a href="#" title="3" aria-label="3">3</a></li>
+                <li class="w-10 h-10 flex_center">...</li>
+                <li><a href="#" title="7" aria-label="6">6</a></li>
+                <li><a href="#" title="8" aria-label="7">7</a></li>
                 <li><a href="#" title="Next" aria-label="Next">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-                      </svg>
-                      
-                </a></li>
-			</ul>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m9 5 7 7-7 7" />
+                        </svg>
+
+                    </a></li>
+            </ul>
         </div>
     </div>
 

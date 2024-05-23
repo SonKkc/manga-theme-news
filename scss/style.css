@@ -283,6 +283,10 @@ input {
   @apply grid grid-cols-1 grid-flow-row gap-4;
 }
 
+.list_col-2 {
+  @apply grid grid-cols-2 grid-flow-row gap-4;
+}
+
 .list_col-5 {
   @apply grid grid-cols-5 grid-flow-row gap-4 max-sm:grid-cols-1 max-[1023px]:grid-cols-3;
 }
@@ -553,19 +557,28 @@ input {
   @apply underline underline-offset-2;
 }
 
-.category_list-item {
-  @apply flex flex-col gap-2 bg-gradient-to-b from-indigo-500;
+.sort_bar {
+  @apply flex justify-between items-center gap-4;
 }
-.category_list-item img {
-  @apply w-full h-56 max-sm:w-full object-cover;
+.sort_bar span {
+  @apply text-gray-400;
 }
-.category_list-item span {
-  @apply text-2xl text-white font-semibold;
+.sort_bar .-block {
+  @apply flex justify-end;
 }
 
-.category_list-item:hover {
+.category_list .-item {
+  @apply flex flex-col gap-2 bg-gradient-to-b from-indigo-500;
+}
+.category_list .-item img {
+  @apply w-full h-56 max-sm:w-full object-cover;
+}
+.category_list .-item span {
+  @apply text-2xl text-white font-semibold;
+}
+.category_list .-item:hover {
   @apply transition from-red-500;
 }
-.category_list-item:hover span {
+.category_list .-item:hover span {
   @apply transition text-red-500;
 }/*# sourceMappingURL=style.css.map */

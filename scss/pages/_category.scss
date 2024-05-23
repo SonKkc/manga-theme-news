@@ -1,19 +1,36 @@
-.category_list-item {
-    @apply flex flex-col gap-2 bg-gradient-to-b from-indigo-500;
+.sort_bar{
+    @apply flex justify-between items-center gap-4;
 
-    & img{
-        @apply w-full h-56 max-sm:w-full object-cover;
+    span{
+        @apply text-gray-400;
     }
 
-    & span{
-        @apply text-2xl text-white font-semibold;
+    & .-block{
+        @apply flex justify-end;
+    }
+}
+
+.category_list{
+
+    & .-item {
+        @apply flex flex-col gap-2 bg-gradient-to-b from-indigo-500;
+    
+        img{
+            @apply w-full h-56 max-sm:w-full object-cover;
+        }
+    
+        span{
+            @apply text-2xl text-white font-semibold;
+        }
+    }
+
+    & .-item:hover{
+        @apply transition from-red-500;
+    
+        span{
+            @apply transition text-red-500;
+        }
     }
 }
 
-.category_list-item:hover{
-    @apply transition from-red-500;
 
-    & span{
-        @apply transition text-red-500;
-    }
-}
