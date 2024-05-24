@@ -1,12 +1,3 @@
-.main_content{
-    @apply md:w-8/12 max-sm:w-full;
-}
-
-.right_content{ 
-    @apply w-4/12 max-sm:w-full;
-}
-
-
 .hero_left {
     @apply w-7/12 w-full max-sm:w-full;
 }
@@ -29,21 +20,22 @@
 
 .hero_title {
     @apply absolute right-0 bottom-0 left-0 w-full h-2/6 bg-gradient-to-t from-gray-500 overflow-hidden;
+
+    & .-text {
+        @apply flex flex-col justify-end text-white text-center max-sm:pt-6 h-full;
+        & p {
+            @apply font-semibold text-4xl max-sm:text-base pb-4;
+        }
+    
+        & h2 {
+            @apply font-semibold pb-2;
+        }
+    }
 }
 
-.hero_title-text {
-    @apply flex flex-col justify-end text-white text-center max-sm:pt-6 h-full;
-    & p {
-        @apply font-semibold text-4xl max-sm:text-base pb-4;
-    }
-
-    & h2 {
-        @apply font-semibold pb-2;
-    }
-}
 
 .home_hero:hover {
-    & .hero_title .hero_title-text{
+    & .hero_title .-text{
         @apply -translate-y-3 transition duration-300 ease-in-out;
     }
 }

@@ -7,7 +7,7 @@
         & .-current{
             @apply max-w-[200px] overflow-hidden;
 
-            p {
+            p{
                 @apply text-white font-semibold truncate;
             }   
         }

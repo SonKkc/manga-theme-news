@@ -134,14 +134,6 @@ input {
   @apply text-white font-semibold text-2xl;
 }
 
-.main_content {
-  @apply md:w-8/12 max-sm:w-full;
-}
-
-.right_content {
-  @apply w-4/12 max-sm:w-full;
-}
-
 .hero_left {
   @apply w-7/12 w-full max-sm:w-full;
 }
@@ -163,18 +155,17 @@ input {
 .hero_title {
   @apply absolute right-0 bottom-0 left-0 w-full h-2/6 bg-gradient-to-t from-gray-500 overflow-hidden;
 }
-
-.hero_title-text {
+.hero_title .-text {
   @apply flex flex-col justify-end text-white text-center max-sm:pt-6 h-full;
 }
-.hero_title-text p {
+.hero_title .-text p {
   @apply font-semibold text-4xl max-sm:text-base pb-4;
 }
-.hero_title-text h2 {
+.hero_title .-text h2 {
   @apply font-semibold pb-2;
 }
 
-.home_hero:hover .hero_title .hero_title-text {
+.home_hero:hover .hero_title .-text {
   @apply -translate-y-3 transition duration-300 ease-in-out;
 }
 
@@ -382,23 +373,23 @@ input {
 }
 
 .secondary {
-  @apply bg-blue-500;
+  @apply bg-rose-500;
 }
 
 .tertiary {
-  @apply bg-green-500;
+  @apply bg-gray-600;
 }
 
 .quaternary {
-  @apply bg-yellow-500;
+  @apply bg-fuchsia-500;
 }
 
 .quinary {
-  @apply bg-indigo-500;
+  @apply bg-green-500;
 }
 
 .senary {
-  @apply bg-purple-500;
+  @apply bg-pink-500;
 }
 
 .septenary {
@@ -607,7 +598,7 @@ input {
 .sort_bar span {
   @apply text-gray-400;
 }
-.sort_bar .-block {
+.sort_bar.-block {
   @apply flex justify-end;
 }
 
@@ -625,4 +616,12 @@ input {
 }
 .category_list .-item:hover span {
   @apply transition text-red-500;
+}
+
+.main_content {
+  @apply md:w-8/12 max-sm:w-full;
+}
+
+.right_content {
+  @apply w-4/12 max-sm:w-full;
 }/*# sourceMappingURL=style.css.map */
